@@ -2308,7 +2308,8 @@ MonoBehaviour:
   projectile: {fileID: 3544215196483897492, guid: 1c3907361fc9b73478c55c05f7693b79, type: 3}
   projectileSpawnPoint: {fileID: 733885391}
   fireRange: 20
-  shootForce: 50
+  shootForce: 10
+  chaseRange: 25
 --- !u!1 &1158279244475757466
 GameObject:
   m_ObjectHideFlags: 0

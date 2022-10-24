@@ -9,6 +9,8 @@ public class PatrolStateSoldier : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.ResetTrigger("resumePatrol");
+
         soldier = animator.GetComponent<Soldier>();
     }
 
@@ -18,6 +20,16 @@ public class PatrolStateSoldier : StateMachineBehaviour
         soldier.Patrol();
         soldier.UpdateTimers();
         soldier.UpdateAnimator();
+
+        if (soldier.PlayerInRange(soldier.fireRange))
+        {
+            animator.SetTrigger("attack");
+        }
+
+        else if (soldier.PlayerInRange(soldier.chaseRange))
+        {
+            animator.SetTrigger("provoked");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

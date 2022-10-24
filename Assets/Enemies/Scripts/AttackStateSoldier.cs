@@ -9,6 +9,7 @@ public class AttackStateSoldier : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        animator.ResetTrigger("attack");
         soldier = animator.GetComponent<Soldier>();
         soldier.Halt();
     }
@@ -16,7 +17,12 @@ public class AttackStateSoldier : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        soldier.FaceTarget();
+
+        if (!soldier.PlayerInRange(soldier.fireRange))
+        {
+            animator.SetTrigger("resumePatrol");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

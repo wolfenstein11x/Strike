@@ -26,6 +26,9 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        // just here to make console warning go away
+        maxLifetime += (damage - 1);
+
         Destroy(gameObject);
     }
 }

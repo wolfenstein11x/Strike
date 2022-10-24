@@ -12,11 +12,14 @@ public class Soldier : MonoBehaviour
     [SerializeField] AudioSource gunSound;
     [SerializeField] Projectile projectile;
     [SerializeField] Transform projectileSpawnPoint;
-    [SerializeField] float fireRange = 20f;
     [SerializeField] float shootForce = 5f;
+
+    public float fireRange = 10f;
+    public float chaseRange = 25f;
 
     NavMeshAgent navMeshAgent;
     Animator animator;
+    Transform player;
 
     int currentWaypointIndex = 0;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
@@ -26,12 +29,13 @@ public class Soldier : MonoBehaviour
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
+        player = GameObject.Find("Player").transform;
     }
 
     
     void Update()
     {
-        DoRaycast();
+
     }
 
     public void Halt()
@@ -107,23 +111,39 @@ public class Soldier : MonoBehaviour
 
         // calculate direction of projectile
         Vector3 forward = transform.TransformDirection(Vector3.forward);
-
-        // instantiate projectile (but first make sure it is facing correct way)
-        //Vector3 projectileRotation = new Vector3(projectile.transform.rotation.x, forward.y, forward.z);
-        //Quaternion projectileQuaternion = Quaternion.Euler(projectileRotation.x, projectileRotation.y, projectileRotation.z);
-
         
+        // instantiate projectile
         Projectile firedProjectile = Instantiate(projectile, projectileSpawnPoint.position, transform.rotation);
 
         // add force to projectile so it moves
         firedProjectile.GetComponent<Rigidbody>().AddForce(forward.normalized * shootForce, ForceMode.Impulse);
     }
 
+    // function for debugging only
     private void DoRaycast()
     {
         Vector3 forward = transform.TransformDirection(Vector3.forward) * fireRange;
         Debug.DrawRay(transform.position + new Vector3(0f, 1f, 0f), forward, Color.red);
     }
 
+    public bool PlayerInRange(float range)
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= range;
+    }
+
+    public bool PlayerInFireRange()
+    {
+        return Vector3.Distance(transform.position, player.transform.position) <= fireRange;
+    }
+
+    public void ChasePlayer()
+    {
+        navMeshAgent.SetDestination(player.transform.position);
+    }
+
+    public void FaceTarget()
+    {
+        transform.LookAt(player);
+    }
 
 }
