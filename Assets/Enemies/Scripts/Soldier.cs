@@ -108,8 +108,12 @@ public class Soldier : MonoBehaviour
         // calculate direction of projectile
         Vector3 forward = transform.TransformDirection(Vector3.forward);
 
-        // instantiate projectile
-        Projectile firedProjectile = Instantiate(projectile, projectileSpawnPoint.position, projectile.transform.rotation);
+        // instantiate projectile (but first make sure it is facing correct way)
+        //Vector3 projectileRotation = new Vector3(projectile.transform.rotation.x, forward.y, forward.z);
+        //Quaternion projectileQuaternion = Quaternion.Euler(projectileRotation.x, projectileRotation.y, projectileRotation.z);
+
+        
+        Projectile firedProjectile = Instantiate(projectile, projectileSpawnPoint.position, transform.rotation);
 
         // add force to projectile so it moves
         firedProjectile.GetComponent<Rigidbody>().AddForce(forward.normalized * shootForce, ForceMode.Impulse);

@@ -2305,7 +2305,7 @@ MonoBehaviour:
   waypointDwellTime: 3
   muzzleFlash: {fileID: 1355944326145256813}
   gunSound: {fileID: 704070885}
-  projectile: {fileID: 3552634704925760844, guid: 0a9a47083ad088f47b494306174ad10b, type: 3}
+  projectile: {fileID: 3544215196483897492, guid: 1c3907361fc9b73478c55c05f7693b79, type: 3}
   projectileSpawnPoint: {fileID: 733885391}
   fireRange: 20
   shootForce: 50
