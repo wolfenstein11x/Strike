@@ -10,7 +10,8 @@ public class ChaseStateSoldier : StateMachineBehaviour
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         animator.ResetTrigger("provoked");
-        soldier = animator.GetComponent<Soldier>();        
+        soldier = animator.GetComponent<Soldier>();
+        soldier.SetRunning(true);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,6 +21,7 @@ public class ChaseStateSoldier : StateMachineBehaviour
 
         if (soldier.PlayerInRange(soldier.fireRange))
         {
+            // start shooting
             animator.SetTrigger("attack");
         }
 
@@ -32,7 +34,7 @@ public class ChaseStateSoldier : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        soldier.SetRunning(false);
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

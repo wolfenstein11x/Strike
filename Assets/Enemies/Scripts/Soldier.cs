@@ -13,6 +13,8 @@ public class Soldier : MonoBehaviour
     [SerializeField] Projectile projectile;
     [SerializeField] Transform projectileSpawnPoint;
     [SerializeField] float shootForce = 5f;
+    [SerializeField] float runSpeed = 5f;
+    [SerializeField] float walkSpeed = 2.5f;
 
     public float fireRange = 10f;
     public float chaseRange = 25f;
@@ -30,6 +32,8 @@ public class Soldier : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
+
+        navMeshAgent.speed = walkSpeed;
     }
 
     
@@ -40,6 +44,7 @@ public class Soldier : MonoBehaviour
 
     public void Halt()
     {
+        navMeshAgent.SetDestination(transform.position);
         navMeshAgent.isStopped = true;
     }
 
@@ -119,11 +124,21 @@ public class Soldier : MonoBehaviour
         firedProjectile.GetComponent<Rigidbody>().AddForce(forward.normalized * shootForce, ForceMode.Impulse);
     }
 
-    // function for debugging only
-    private void DoRaycast()
+    public bool RaycastHit()
     {
-        Vector3 forward = transform.TransformDirection(Vector3.forward) * fireRange;
-        Debug.DrawRay(transform.position + new Vector3(0f, 1f, 0f), forward, Color.red);
+        //Vector3 forward = transform.TransformDirection(Vector3.forward) * fireRange;
+        //Debug.DrawRay(transform.position + new Vector3(0f, 1f, 0f), forward, Color.red);
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + new Vector3 (0f, 1.5f, 0f), transform.forward, out hit, fireRange))
+        {
+            if (hit.transform.gameObject.tag == "Player")
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public bool PlayerInRange(float range)
@@ -144,6 +159,11 @@ public class Soldier : MonoBehaviour
     public void FaceTarget()
     {
         transform.LookAt(player);
+    }
+
+    public void SetRunning(bool isRunning)
+    {
+        navMeshAgent.speed = isRunning ? runSpeed : walkSpeed;
     }
 
 }
