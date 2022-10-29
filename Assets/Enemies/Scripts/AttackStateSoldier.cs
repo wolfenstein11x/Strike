@@ -21,7 +21,7 @@ public class AttackStateSoldier : StateMachineBehaviour
 
         if (!soldier.PlayerInSights())
         {
-            animator.SetTrigger("resumePatrol");
+            animator.SetTrigger("chase");
         }
     }
 
