@@ -21,7 +21,7 @@ public class PatrolStateSoldier : StateMachineBehaviour
         soldier.UpdateTimers();
         soldier.UpdateAnimator();
 
-        if (soldier.PlayerInRange(soldier.fireRange))
+        if (soldier.PlayerInSights())
         {
             animator.SetTrigger("attack");
         }

@@ -19,7 +19,7 @@ public class AttackStateSoldier : StateMachineBehaviour
     {
         soldier.FaceTarget();
 
-        if (!soldier.PlayerInRange(soldier.fireRange))
+        if (!soldier.PlayerInSights())
         {
             animator.SetTrigger("resumePatrol");
         }

@@ -19,13 +19,13 @@ public class ChaseStateSoldier : StateMachineBehaviour
     {
         soldier.ChasePlayer();
 
-        if (soldier.PlayerInRange(soldier.fireRange))
+        if (soldier.PlayerInSights())
         {
             // start shooting
             animator.SetTrigger("attack");
         }
 
-        if (!soldier.PlayerInRange(soldier.chaseRange))
+        else if (!soldier.PlayerInRange(soldier.chaseRange))
         {
             animator.SetTrigger("resumePatrol");
         }

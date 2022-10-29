@@ -15,6 +15,8 @@ public class Soldier : MonoBehaviour
     [SerializeField] float shootForce = 5f;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float walkSpeed = 2.5f;
+    [SerializeField] float angleRange = 10f;
+    [SerializeField] float spread = 3f;
 
     public float fireRange = 10f;
     public float chaseRange = 25f;
@@ -22,6 +24,8 @@ public class Soldier : MonoBehaviour
     NavMeshAgent navMeshAgent;
     Animator animator;
     Transform player;
+    Vector3 midsectionOffset = new Vector3(0f, 1.5f, 0f);
+    LayerMask shootableLayers;
 
     int currentWaypointIndex = 0;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
@@ -32,6 +36,7 @@ public class Soldier : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
+        shootableLayers = LayerMask.GetMask("Player");
 
         navMeshAgent.speed = walkSpeed;
     }
@@ -114,41 +119,61 @@ public class Soldier : MonoBehaviour
         muzzleFlash.Play();
         gunSound.Play();
 
+        // generate spread vector
+        float xSpread = Random.Range(-spread, spread);
+        float ySpread = Random.Range(-spread, spread);
+        float zSpread = Random.Range(-spread, spread);
+        Vector3 spreadVector = new Vector3(xSpread, ySpread, zSpread);
+
         // calculate direction of projectile
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        
+        Vector3 startPoint = transform.position + midsectionOffset;
+        Vector3 endPoint = player.transform.position + spreadVector;
+
+        Vector3 dir = (endPoint - startPoint).normalized;
+
         // instantiate projectile
         Projectile firedProjectile = Instantiate(projectile, projectileSpawnPoint.position, transform.rotation);
 
         // add force to projectile so it moves
-        firedProjectile.GetComponent<Rigidbody>().AddForce(forward.normalized * shootForce, ForceMode.Impulse);
+        firedProjectile.GetComponent<Rigidbody>().AddForce(dir * shootForce, ForceMode.Impulse);
     }
 
-    public bool RaycastHit()
+    public bool PlayerInSights()
     {
-        //Vector3 forward = transform.TransformDirection(Vector3.forward) * fireRange;
-        //Debug.DrawRay(transform.position + new Vector3(0f, 1f, 0f), forward, Color.red);
+        // player is automatically in sights if closer than stopping distance
+        if (Vector3.Distance(transform.position, player.transform.position) <= navMeshAgent.stoppingDistance) { return true; }
+
+        Vector3 startPoint = transform.position + midsectionOffset;
+        Vector3 endPoint = player.transform.position;
+
+        Vector3 dir = (endPoint - startPoint).normalized;
 
         RaycastHit hit;
-        if (Physics.Raycast(transform.position + new Vector3 (0f, 1.5f, 0f), transform.forward, out hit, fireRange))
+        if (Physics.Raycast(startPoint, dir, out hit, fireRange, shootableLayers) && WithinAngle(dir))
         {
-            if (hit.transform.gameObject.tag == "Player")
-            {
-                return true;
-            }
+            Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
+            return true;
+        }
+        else
+        {
+            Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
+            return false;
         }
 
-        return false;
     }
+
+    private bool WithinAngle(Vector3 direction)
+    {
+        float angle = Vector3.Angle(direction, transform.forward);
+        //Debug.Log(angle + " degrees");
+        return angle <= angleRange;
+    }
+
+    
 
     public bool PlayerInRange(float range)
     {
         return Vector3.Distance(transform.position, player.transform.position) <= range;
-    }
-
-    public bool PlayerInFireRange()
-    {
-        return Vector3.Distance(transform.position, player.transform.position) <= fireRange;
     }
 
     public void ChasePlayer()
@@ -159,6 +184,9 @@ public class Soldier : MonoBehaviour
     public void FaceTarget()
     {
         transform.LookAt(player);
+        //Vector3 direction = (player.position - transform.position).normalized;
+        //Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
+        //transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * navMeshAgent.angularSpeed);
     }
 
     public void SetRunning(bool isRunning)
