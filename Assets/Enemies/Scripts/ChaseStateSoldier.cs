@@ -19,12 +19,13 @@ public class ChaseStateSoldier : StateMachineBehaviour
     {
         soldier.UpdateAnimator();
         soldier.ChasePlayer();
-
+        
         if (soldier.PlayerInSights())
         {
             // start shooting
             animator.SetTrigger("attack");
         }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

@@ -18,7 +18,7 @@ public class AttackStateSoldier : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         soldier.FaceTarget();
-
+        
         if (!soldier.PlayerInSights())
         {
             animator.SetTrigger("chase");

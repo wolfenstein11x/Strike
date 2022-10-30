@@ -44,7 +44,10 @@ public class Soldier : MonoBehaviour
     
     void Update()
     {
-
+        // for debugging only
+        //Patrol();
+        //UpdateTimers();
+        //UpdateAnimator();
     }
 
     public void Halt()
@@ -160,6 +163,12 @@ public class Soldier : MonoBehaviour
             return false;
         }
 
+    }
+
+    // for debugging only
+    void ShowForwardDirection()
+    {
+        Debug.DrawRay(transform.position + midsectionOffset, Vector3.forward * fireRange, Color.blue);
     }
 
     private bool WithinAngle(Vector3 direction)

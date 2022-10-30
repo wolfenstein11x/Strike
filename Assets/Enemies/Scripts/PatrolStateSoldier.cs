@@ -18,7 +18,7 @@ public class PatrolStateSoldier : StateMachineBehaviour
         soldier.Patrol();
         soldier.UpdateTimers();
         soldier.UpdateAnimator();
-
+        
         if (soldier.PlayerInSights())
         {
             animator.SetTrigger("attack");
@@ -28,6 +28,7 @@ public class PatrolStateSoldier : StateMachineBehaviour
         {
             animator.SetTrigger("chase");
         }
+        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
