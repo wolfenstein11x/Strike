@@ -5,7 +5,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     [SerializeField] float maxLifetime = 3f;
-    [SerializeField] float damage = 1f;
+    [SerializeField] int damage = 10;
 
 
     // Start is called before the first frame update
@@ -26,8 +26,12 @@ public class Projectile : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        // just here to make console warning go away
-        maxLifetime += (damage - 1);
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+        }
 
         Destroy(gameObject);
     }
