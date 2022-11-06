@@ -24,11 +24,13 @@ public class Weapon : MonoBehaviour
     bool zoomedInToggle = false;
     RigidbodyFirstPersonController fpsController;
     MeshRenderer meshRenderer;
+    AmmoTracker ammoTracker;
 
     private void Start()
     {
         fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
         meshRenderer = GetComponent<MeshRenderer>();
+        ammoTracker = GetComponentInChildren<AmmoTracker>();
     }
 
     void Update()
@@ -50,6 +52,7 @@ public class Weapon : MonoBehaviour
         PlayMuzzleFlash();
         gunSound.Play();
         ProcessRaycast();
+        ammoTracker.DecrementAmmo();
 
     }
 
