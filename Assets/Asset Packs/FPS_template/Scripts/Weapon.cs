@@ -20,7 +20,6 @@ public class Weapon : MonoBehaviour
     [SerializeField] float zoomedInFOV = 20f;
     [SerializeField] float zoomOutSensitivity = 2f;
     [SerializeField] float zoomInSensitivity = 0.5f;
-    [SerializeField] Vector3 zoomPos;
 
     bool zoomedInToggle = false;
     RigidbodyFirstPersonController fpsController;
