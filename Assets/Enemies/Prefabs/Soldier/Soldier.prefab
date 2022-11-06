@@ -2214,7 +2214,7 @@ Transform:
   m_GameObject: {fileID: 1158279244475749862}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 63.777702, y: 0, z: -11.11558}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1158279244475521826}
@@ -2341,7 +2341,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3875745b431faf74c92ca02a6a2fbad5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitPoints: 100
+  hitPoints: 10
 --- !u!1 &1158279244475757466
 GameObject:
   m_ObjectHideFlags: 0
@@ -2714,7 +2714,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3425698b8034fe74788abb704c8f8077, type: 2}
+  - {fileID: 2100000, guid: b599c004b71afff4d9318c349bbb7d53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2815,7 +2815,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3425698b8034fe74788abb704c8f8077, type: 2}
+  - {fileID: 2100000, guid: b599c004b71afff4d9318c349bbb7d53, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

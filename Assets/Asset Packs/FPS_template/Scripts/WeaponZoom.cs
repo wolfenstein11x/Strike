@@ -10,8 +10,6 @@ public class WeaponZoom : MonoBehaviour
     [SerializeField] float zoomedInFOV = 20f;
     [SerializeField] float zoomOutSensitivity = 2f;
     [SerializeField] float zoomInSensitivity = 0.5f;
-    [SerializeField] GameObject[] zoomableReticles;
-    [SerializeField] int zoomReticleScale = 2;
 
     RigidbodyFirstPersonController fpsController;
 
@@ -35,7 +33,7 @@ public class WeaponZoom : MonoBehaviour
                 fpsCamera.fieldOfView = zoomedInFOV;
                 fpsController.mouseLook.XSensitivity = zoomInSensitivity;
                 fpsController.mouseLook.YSensitivity = zoomInSensitivity;
-                ScaleReticleUp();
+                //ScaleReticleUp();
             }
 
             else
@@ -44,11 +42,12 @@ public class WeaponZoom : MonoBehaviour
                 fpsCamera.fieldOfView = zoomedOutFOV;
                 fpsController.mouseLook.XSensitivity = zoomOutSensitivity;
                 fpsController.mouseLook.YSensitivity = zoomOutSensitivity;
-                ScaleReticleDown();
+                //ScaleReticleDown();
             }
         }
     }
 
+    /*
     private void ScaleReticleUp()
     {
         foreach(GameObject reticle in zoomableReticles)
@@ -74,4 +73,5 @@ public class WeaponZoom : MonoBehaviour
             }
         }
     }
+    */
 }
