@@ -8,6 +8,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera fpsCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
+    [SerializeField] float timeBetweenShots = 1f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem zoomedMuzzleFlash;
     [SerializeField] AudioSource gunSound;
@@ -26,16 +27,21 @@ public class Weapon : MonoBehaviour
     MeshRenderer meshRenderer;
     AmmoTracker ammoTracker;
 
+    private bool readyToShoot;
+    private bool allowInvoke;
+
     private void Start()
     {
         fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
         meshRenderer = GetComponent<MeshRenderer>();
         ammoTracker = GetComponentInChildren<AmmoTracker>();
+        readyToShoot = true;
+        allowInvoke = true;
     }
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && readyToShoot)
         {
             Shoot();
         }
@@ -49,11 +55,25 @@ public class Weapon : MonoBehaviour
 
     private void Shoot()
     {
+        readyToShoot = false;
+
         PlayMuzzleFlash();
         gunSound.Play();
         ProcessRaycast();
         ammoTracker.DecrementAmmo();
 
+        if (allowInvoke)
+        {
+            Invoke("ResetShot", timeBetweenShots);
+            allowInvoke = false;
+        }
+
+    }
+
+    private void ResetShot()
+    {
+        readyToShoot = true;
+        allowInvoke = true;
     }
 
     private void ProcessRaycast()

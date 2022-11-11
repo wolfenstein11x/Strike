@@ -154,12 +154,12 @@ public class Soldier : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(startPoint, dir, out hit, fireRange, shootableLayers) && WithinAngle(dir))
         {
-            Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
+            //Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
             return true;
         }
         else
         {
-            Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
+            //Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
             return false;
         }
 
