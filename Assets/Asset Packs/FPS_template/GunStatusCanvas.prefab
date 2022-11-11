@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7386256249284840813}
   - component: {fileID: 7386256249284840815}
   - component: {fileID: 7386256249284840814}
+  - component: {fileID: 1959872366}
   m_Layer: 6
   m_Name: ammoCount
   m_TagString: Untagged
@@ -66,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 30/30
+  m_text: 8/8
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -135,6 +136,19 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &1959872366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7386256249284840812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325f15428c997c44ba4220d58cc08f03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 8
 --- !u!1 &7386256249667173847
 GameObject:
   m_ObjectHideFlags: 0
@@ -170,8 +184,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 70, y: -100}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: 65, y: -87.49997}
+  m_SizeDelta: {x: 130, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7386256249667173842
 CanvasRenderer:
@@ -201,7 +215,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: c9ef79ba59db38f40bd698e29162563d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be0bad5390709e8448cf566da354017a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
