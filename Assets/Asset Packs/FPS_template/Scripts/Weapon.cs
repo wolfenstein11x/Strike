@@ -8,10 +8,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera fpsCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 30f;
-    [SerializeField] float timeBetweenShots = 1f;
+    public float timeBetweenShots = 1f;
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem zoomedMuzzleFlash;
-    [SerializeField] AudioSource gunSound;
+    public AudioSource gunSound;
     [SerializeField] GameObject hitEffect;
     [SerializeField] GameObject reticle;
 
@@ -25,12 +25,21 @@ public class Weapon : MonoBehaviour
     bool zoomedInToggle = false;
     RigidbodyFirstPersonController fpsController;
     MeshRenderer meshRenderer;
-    AmmoTracker ammoTracker;
+    protected AmmoTracker ammoTracker;
 
-    private bool readyToShoot;
-    private bool allowInvoke;
+    protected bool readyToShoot;
+    protected bool allowInvoke;
 
     private void Start()
+    {
+        fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
+        meshRenderer = GetComponent<MeshRenderer>();
+        ammoTracker = GetComponentInChildren<AmmoTracker>();
+        readyToShoot = true;
+        allowInvoke = true;
+    }
+
+    protected void Initialize()
     {
         fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
         meshRenderer = GetComponent<MeshRenderer>();
@@ -50,10 +59,9 @@ public class Weapon : MonoBehaviour
         {
             ToggleZoom();
         }
-
     }
 
-    private void Shoot()
+    protected virtual void Shoot()
     {
         readyToShoot = false;
 
@@ -93,7 +101,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void PlayMuzzleFlash()
+    protected void PlayMuzzleFlash()
     {
         if (!zoomedInToggle) { muzzleFlash.Play(); }
         else { zoomedMuzzleFlash.Play(); }
@@ -105,7 +113,7 @@ public class Weapon : MonoBehaviour
         Destroy(impact, 0.1f);
     }
 
-    private void ToggleZoom()
+    protected void ToggleZoom()
     {
         if (!hasZoom) return;
 
