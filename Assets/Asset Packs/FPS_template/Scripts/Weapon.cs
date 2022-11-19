@@ -5,8 +5,8 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class Weapon : MonoBehaviour
 {
-    [SerializeField] Camera fpsCamera;
-    [SerializeField] float range = 100f;
+    public Camera fpsCamera;
+    public float range = 100f;
     [SerializeField] float damage = 30f;
     public float timeBetweenShots = 1f;
     [SerializeField] ParticleSystem muzzleFlash;

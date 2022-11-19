@@ -6,6 +6,10 @@ public class Projectile : MonoBehaviour
 {
     [SerializeField] float maxLifetime = 3f;
     [SerializeField] int damage = 10;
+    [SerializeField] GameObject impactEffect;
+    [SerializeField] GameObject impactSound;
+    [SerializeField] float impactEffectLifetime = 0.5f;
+    [SerializeField] float impactSoundLifetime = 1f;
 
 
     // Start is called before the first frame update
@@ -27,12 +31,35 @@ public class Projectile : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+
+        PlayImpactEffects();
 
         if (playerHealth != null)
         {
             playerHealth.TakeDamage(damage);
         }
 
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damage);
+        }
+
         Destroy(gameObject);
+    }
+
+    private void PlayImpactEffects()
+    {
+        if (impactSound != null)
+        {
+            GameObject impactSoundInstance = Instantiate(impactSound, transform.position, transform.rotation);
+            Destroy(impactSoundInstance, impactSoundLifetime);
+        }
+
+        if (impactEffect != null)
+        {
+            GameObject impactEffectInstance = Instantiate(impactEffect, transform.position, transform.rotation);
+            Destroy(impactEffectInstance, impactEffectLifetime);
+        }
     }
 }
