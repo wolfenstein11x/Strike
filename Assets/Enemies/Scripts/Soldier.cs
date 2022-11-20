@@ -41,7 +41,17 @@ public class Soldier : MonoBehaviour
         navMeshAgent.speed = walkSpeed;
     }
 
-    
+    protected void Initialize()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        animator = GetComponent<Animator>();
+        player = GameObject.Find("Player").transform;
+        shootableLayers = LayerMask.GetMask("Player");
+
+        navMeshAgent.speed = walkSpeed;
+    }
+
+
     void Update()
     {
         // for debugging only
@@ -143,6 +153,7 @@ public class Soldier : MonoBehaviour
 
     public bool PlayerInSights()
     {
+        // this is a problem, need to fix
         // player is automatically in sights if closer than stopping distance
         if (Vector3.Distance(transform.position, player.transform.position) <= navMeshAgent.stoppingDistance) { return true; }
 
@@ -154,12 +165,12 @@ public class Soldier : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(startPoint, dir, out hit, fireRange, shootableLayers) && WithinAngle(dir))
         {
-            //Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
+            Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
             return true;
         }
         else
         {
-            //Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
+            Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
             return false;
         }
 
