@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5533568530509412439}
   - component: {fileID: 5533568530509412440}
-  - component: {fileID: 5533568530509412438}
   - component: {fileID: 5533568530509412437}
+  - component: {fileID: 6090904419207060993}
   m_Layer: 0
   m_Name: rocket
   m_TagString: Untagged
@@ -48,24 +48,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.23506713, y: 0.23506725, z: 0.4270935}
   m_Center: {x: -0.008424401, y: 0.0016848445, z: 0.16850281}
---- !u!114 &5533568530509412438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5533568530509412441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d17aa95e577a2419bc493a037b9c52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxLifetime: 10
-  damage: 100
-  impactEffect: {fileID: 4353037411446534052, guid: bf6c09fb5865c4840b909048a9c55a5f, type: 3}
-  impactSound: {fileID: 6255571969230826743, guid: c06ea9fdf503837408a255a97b1e4f2c, type: 3}
-  impactEffectLifetime: 0.5
-  impactSoundLifetime: 1.75
 --- !u!54 &5533568530509412437
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -82,6 +64,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6090904419207060993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5533568530509412441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bbf50af4ae7e5a498a62dfbdd0a7174, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifetime: 10
+  damage: 100
+  impactEffect: {fileID: 5676223786180280405, guid: 80e07bc25956b81438163fe9b644fb4d, type: 3}
+  impactSound: {fileID: 6255571969230826743, guid: c06ea9fdf503837408a255a97b1e4f2c, type: 3}
+  impactEffectLifetime: 0.5
+  impactSoundLifetime: 1.75
 --- !u!1001 &5533568530869245867
 PrefabInstance:
   m_ObjectHideFlags: 0

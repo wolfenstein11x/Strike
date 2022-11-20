@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    [SerializeField] float maxLifetime = 3f;
-    [SerializeField] int damage = 10;
+    public float maxLifetime = 3f;
+    public int damage = 10;
     [SerializeField] GameObject impactEffect;
     [SerializeField] GameObject impactSound;
     [SerializeField] float impactEffectLifetime = 0.5f;
@@ -15,12 +15,7 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
-        // de-child bullet from shooter so it does not move with shooter
-        transform.parent = null;
-
-        // destroy bullet at pre-determined time so it doesn't fly until it hits something/forever
-        Destroy(gameObject, maxLifetime);
+        Initialize();
     }
 
     // Update is called once per frame
@@ -28,27 +23,21 @@ public class Projectile : MonoBehaviour
     {
     }
 
-    private void OnCollisionEnter(Collision collision)
+    protected void Initialize()
     {
-        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+        // de-child bullet from shooter so it does not move with shooter
+        transform.parent = null;
 
-        PlayImpactEffects();
-
-        if (playerHealth != null)
-        {
-            playerHealth.TakeDamage(damage);
-        }
-
-        if (enemyHealth != null)
-        {
-            enemyHealth.TakeDamage(damage);
-        }
-
-        Destroy(gameObject);
+        // destroy bullet at pre-determined time so it doesn't fly until it hits something/forever
+        Destroy(gameObject, maxLifetime);
     }
 
-    private void PlayImpactEffects()
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        HandleImpact(collision);
+    }
+
+    protected void PlayImpactEffects()
     {
         if (impactSound != null)
         {
@@ -61,5 +50,23 @@ public class Projectile : MonoBehaviour
             GameObject impactEffectInstance = Instantiate(impactEffect, transform.position, transform.rotation);
             Destroy(impactEffectInstance, impactEffectLifetime);
         }
+    }
+
+    protected virtual void HandleImpact(Collision collision)
+    {
+        PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        EnemyHealth enemyHealth = collision.gameObject.GetComponent<EnemyHealth>();
+
+        if (playerHealth != null)
+        {
+            playerHealth.TakeDamage(damage);
+        }
+
+        if (enemyHealth != null)
+        {
+            enemyHealth.TakeDamage(damage);
+        }
+
+        Destroy(gameObject);
     }
 }
