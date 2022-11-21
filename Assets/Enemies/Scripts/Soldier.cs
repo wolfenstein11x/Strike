@@ -11,7 +11,7 @@ public class Soldier : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] AudioSource gunSound;
     [SerializeField] Projectile projectile;
-    [SerializeField] Transform projectileSpawnPoint;
+    public Transform projectileSpawnPoint;
     [SerializeField] float shootForce = 5f;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float walkSpeed = 2.5f;
@@ -21,11 +21,13 @@ public class Soldier : MonoBehaviour
     public float fireRange = 10f;
     public float chaseRange = 25f;
 
-    NavMeshAgent navMeshAgent;
+    protected NavMeshAgent navMeshAgent;
     Animator animator;
-    Transform player;
-    Vector3 midsectionOffset = new Vector3(0f, 1.5f, 0f);
-    LayerMask shootableLayers;
+    protected Transform player;
+    protected Vector3 midsectionOffset = new Vector3(0f, 1.5f, 0f);
+    protected LayerMask shootableLayers;
+    protected int shootableLayer;
+    protected LayerMask shieldLayers;
 
     int currentWaypointIndex = 0;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
@@ -46,7 +48,7 @@ public class Soldier : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         player = GameObject.Find("Player").transform;
-        shootableLayers = LayerMask.GetMask("Player");
+        shootableLayer = LayerMask.NameToLayer("Player");
 
         navMeshAgent.speed = walkSpeed;
     }
@@ -139,7 +141,7 @@ public class Soldier : MonoBehaviour
         Vector3 spreadVector = new Vector3(xSpread, ySpread, zSpread);
 
         // calculate direction of projectile
-        Vector3 startPoint = transform.position + midsectionOffset;
+        Vector3 startPoint = transform.position + midsectionOffset; //projectileSpawnPoint.position;
         Vector3 endPoint = player.transform.position + spreadVector;
 
         Vector3 dir = (endPoint - startPoint).normalized;
@@ -151,7 +153,7 @@ public class Soldier : MonoBehaviour
         firedProjectile.GetComponent<Rigidbody>().AddForce(dir * shootForce, ForceMode.Impulse);
     }
 
-    public bool PlayerInSights()
+    public virtual bool PlayerInSights()
     {
         // this is a problem, need to fix
         // player is automatically in sights if closer than stopping distance
@@ -165,12 +167,12 @@ public class Soldier : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(startPoint, dir, out hit, fireRange, shootableLayers) && WithinAngle(dir))
         {
-            Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
+            //Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
             return true;
         }
         else
         {
-            Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
+            //Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
             return false;
         }
 
@@ -182,10 +184,10 @@ public class Soldier : MonoBehaviour
         Debug.DrawRay(transform.position + midsectionOffset, Vector3.forward * fireRange, Color.blue);
     }
 
-    private bool WithinAngle(Vector3 direction)
+    protected bool WithinAngle(Vector3 direction)
     {
         float angle = Vector3.Angle(direction, transform.forward);
-        //Debug.Log(angle + " degrees");
+        Debug.Log(angle + " degrees");
         return angle <= angleRange;
     }
 

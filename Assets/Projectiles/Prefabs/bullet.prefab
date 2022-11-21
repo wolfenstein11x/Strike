@@ -47,8 +47,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8d17aa95e577a2419bc493a037b9c52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifetime: 3
+  maxLifetime: 5
   damage: 10
+  impactEffect: {fileID: 0}
+  impactSound: {fileID: 0}
+  impactEffectLifetime: 0.5
+  impactSoundLifetime: 1
 --- !u!54 &-2605534915883433996
 Rigidbody:
   m_ObjectHideFlags: 0

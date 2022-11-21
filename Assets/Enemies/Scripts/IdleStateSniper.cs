@@ -21,14 +21,14 @@ public class IdleStateSniper : StateMachineBehaviour
 
         if (sniper.PlayerInSights())
         {
-            Debug.Log("shoot em");
+            animator.SetTrigger("attack");
         }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        animator.ResetTrigger("attack");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

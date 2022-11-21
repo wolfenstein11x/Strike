@@ -2727,6 +2727,7 @@ GameObject:
   - component: {fileID: 2213405508666946028}
   - component: {fileID: 2213405508666946031}
   - component: {fileID: 2213405509245198845}
+  - component: {fileID: 506371525}
   m_Layer: 0
   m_Name: Sniper
   m_TagString: Untagged
@@ -2861,16 +2862,29 @@ MonoBehaviour:
   waypointTolerance: 1
   waypointDwellTime: 10
   muzzleFlash: {fileID: 893631077899866735}
-  gunSound: {fileID: 0}
-  projectile: {fileID: 0}
-  projectileSpawnPoint: {fileID: 0}
-  shootForce: 5
+  gunSound: {fileID: 8609848469106980787}
+  projectile: {fileID: 3544215196483897492, guid: 1c3907361fc9b73478c55c05f7693b79, type: 3}
+  projectileSpawnPoint: {fileID: 2213405507910012109}
+  shootForce: 65
   runSpeed: 5
   walkSpeed: 2.5
-  angleRange: 10
-  spread: 3
-  fireRange: 10
-  chaseRange: 25
+  angleRange: 45
+  spread: 0.02
+  fireRange: 100
+  chaseRange: 1
+--- !u!114 &506371525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1055126831169006308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3875745b431faf74c92ca02a6a2fbad5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoints: 100
 --- !u!1 &1055126831169007622
 GameObject:
   m_ObjectHideFlags: 0
@@ -3307,6 +3321,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c4acc492fc405b45a67b3b6f74ac1f5, type: 3}
+--- !u!82 &8609848469106980787 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5671630367311846545, guid: 4c4acc492fc405b45a67b3b6f74ac1f5, type: 3}
+  m_PrefabInstance: {fileID: 4164138968016694050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8609848469106980788 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5671630367311846550, guid: 4c4acc492fc405b45a67b3b6f74ac1f5, type: 3}
