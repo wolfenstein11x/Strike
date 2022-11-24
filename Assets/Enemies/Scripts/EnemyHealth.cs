@@ -11,6 +11,8 @@ public class EnemyHealth : MonoBehaviour
     Animator animator;
     PlayerStatus player;
 
+    List<string> dieAnimations = new List<string>() { "die", "die1", "die2", "die3" };
+
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -18,7 +20,7 @@ public class EnemyHealth : MonoBehaviour
         isDead = false;
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage, bool explosionDamage=false)
     {
         if (isDead) { return; }
 
@@ -26,7 +28,7 @@ public class EnemyHealth : MonoBehaviour
 
         if (hitPoints <= 0)
         {
-            Die();
+            Die(explosionDamage);
         }
 
         else
@@ -35,11 +37,25 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
-    public void Die()
+    public void Die(bool explosionDeath=false)
     {
         isDead = true;
-        animator.SetTrigger("die");
         player.RecordKill(gameObject.tag);
+        GetComponent<Soldier>().Halt();
+
+        if (explosionDeath)
+        {
+            animator.SetTrigger("dieExplosion");
+        }
+
+        else
+        {
+            // randomly select die animation
+            string dieAnimation = dieAnimations[Random.Range(0, dieAnimations.Count)];
+            animator.SetTrigger(dieAnimation);
+        }
+        
+
         //Destroy(gameObject);
     }
 }

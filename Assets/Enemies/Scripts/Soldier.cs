@@ -187,7 +187,7 @@ public class Soldier : MonoBehaviour
     protected bool WithinAngle(Vector3 direction)
     {
         float angle = Vector3.Angle(direction, transform.forward);
-        Debug.Log(angle + " degrees");
+        //Debug.Log(angle + " degrees");
         return angle <= angleRange;
     }
 

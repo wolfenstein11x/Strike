@@ -47,7 +47,7 @@ public class Rocket : Projectile
                 float proximity = (location - enemy.transform.position).magnitude;
                 float effect = 1 - (proximity / radius);
 
-                enemy.TakeDamage(damage * effect);
+                enemy.TakeDamage(damage * effect, true);
             }
         }
 
