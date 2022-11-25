@@ -8,15 +8,15 @@ public class Soldier : MonoBehaviour
     [SerializeField] PatrolPath patrolPath;
     [SerializeField] float waypointTolerance = 1f;
     [SerializeField] float waypointDwellTime = 3f;
-    [SerializeField] ParticleSystem muzzleFlash;
-    [SerializeField] AudioSource gunSound;
-    [SerializeField] Projectile projectile;
+    public ParticleSystem muzzleFlash;
+    public AudioSource gunSound;
+    public Projectile projectile;
     public Transform projectileSpawnPoint;
     [SerializeField] float shootForce = 5f;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float walkSpeed = 2.5f;
     [SerializeField] float angleRange = 10f;
-    [SerializeField] float spread = 3f;
+    public float spread = 3f;
 
     public float fireRange = 10f;
     public float chaseRange = 25f;
@@ -129,7 +129,7 @@ public class Soldier : MonoBehaviour
         animator.SetFloat("ForwardSpeed", speed);
     }
 
-    public void FireRound()
+    public virtual void FireRound()
     {
         // play audio and visual effects
         muzzleFlash.Play();

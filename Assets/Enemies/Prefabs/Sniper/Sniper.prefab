@@ -2865,13 +2865,14 @@ MonoBehaviour:
   gunSound: {fileID: 8609848469106980787}
   projectile: {fileID: 3544215196483897492, guid: 1c3907361fc9b73478c55c05f7693b79, type: 3}
   projectileSpawnPoint: {fileID: 2213405507910012109}
-  shootForce: 65
+  shootForce: 85
   runSpeed: 5
   walkSpeed: 2.5
   angleRange: 45
-  spread: 0.02
+  spread: 0.5
   fireRange: 100
   chaseRange: 1
+  weaponDamage: 20
 --- !u!114 &506371525
 MonoBehaviour:
   m_ObjectHideFlags: 0
