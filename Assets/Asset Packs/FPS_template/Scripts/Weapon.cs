@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem zoomedMuzzleFlash;
     public AudioSource gunSound;
     [SerializeField] GameObject hitEffect;
+    [SerializeField] float provocationRadius = 10f;
     [SerializeField] GameObject reticle;
 
     [SerializeField] bool hasZoom = false;
@@ -90,6 +91,8 @@ public class Weapon : MonoBehaviour
         if (Physics.Raycast(fpsCamera.transform.position, fpsCamera.transform.forward, out hit, range))
         {
             CreateHitImpact(hit);
+            CreateProvocationSphere(hit, provocationRadius);
+
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;
             target.TakeDamage(damage);
@@ -111,6 +114,19 @@ public class Weapon : MonoBehaviour
     {
         GameObject impact = Instantiate(hitEffect, hit.point, Quaternion.LookRotation(hit.normal));
         Destroy(impact, 0.1f);
+    }
+
+    private void CreateProvocationSphere(RaycastHit hit, float radius)
+    {
+        Collider[] objectsInRange = Physics.OverlapSphere(hit.point, radius);
+        foreach (Collider col in objectsInRange)
+        {
+            Soldier enemy = col.GetComponent<Soldier>();
+            if (enemy != null)
+            {
+                enemy.SetProvoked(true);
+            }
+        }
     }
 
     protected void ToggleZoom()

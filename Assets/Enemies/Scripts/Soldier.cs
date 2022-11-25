@@ -31,6 +31,7 @@ public class Soldier : MonoBehaviour
 
     int currentWaypointIndex = 0;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
+    bool isProvoked = false;
 
 
     void Start()
@@ -214,6 +215,16 @@ public class Soldier : MonoBehaviour
     public void SetRunning(bool isRunning)
     {
         navMeshAgent.speed = isRunning ? runSpeed : walkSpeed;
+    }
+
+    public bool IsProvoked()
+    {
+        return isProvoked;
+    }
+
+    public void SetProvoked(bool status)
+    {
+        isProvoked = status;
     }
 
 }

@@ -24,11 +24,10 @@ public class PatrolStateSoldier : StateMachineBehaviour
             animator.SetTrigger("attack");
         }
 
-        else if (soldier.PlayerInRange(soldier.chaseRange))
+        else if (soldier.PlayerInRange(soldier.chaseRange) || soldier.IsProvoked())
         {
             animator.SetTrigger("chase");
         }
-        
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state

@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour
 
     Animator animator;
     PlayerStatus player;
+    Soldier soldier;
 
     List<string> dieAnimations = new List<string>() { "die", "die1", "die2", "die3" };
 
@@ -17,12 +18,15 @@ public class EnemyHealth : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         player = FindObjectOfType<PlayerStatus>();
+        soldier = GetComponent<Soldier>();
         isDead = false;
     }
 
     public void TakeDamage(float damage, bool explosionDamage=false)
     {
         if (isDead) { return; }
+
+        soldier.SetProvoked(true);
 
         hitPoints -= damage;
 
@@ -41,7 +45,7 @@ public class EnemyHealth : MonoBehaviour
     {
         isDead = true;
         player.RecordKill(gameObject.tag);
-        GetComponent<Soldier>().Halt();
+        soldier.Halt();
 
         if (explosionDeath)
         {
@@ -57,5 +61,10 @@ public class EnemyHealth : MonoBehaviour
         
 
         //Destroy(gameObject);
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }
