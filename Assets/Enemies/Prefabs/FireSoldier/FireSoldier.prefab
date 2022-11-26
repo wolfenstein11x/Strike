@@ -3215,7 +3215,7 @@ MonoBehaviour:
   walkSpeed: 2.5
   angleRange: 10
   spread: 3
-  fireRange: 25
+  fireRange: 15
   chaseRange: 40
   fireEffect: {fileID: 4023401285504526983}
 --- !u!1001 &1906462520422081413

@@ -5,6 +5,7 @@ using UnityEngine;
 public class FireSoldier : Soldier
 {
     [SerializeField] GameObject fireEffect;
+    [SerializeField] float fireRangeBuffer = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -30,8 +31,16 @@ public class FireSoldier : Soldier
         fireEffect.SetActive(status);
     }
 
-    public bool InFiringRange()
+    public bool InFiringRange(bool plusBuffer=false)
     {
-        return (Vector3.Distance(transform.position, player.transform.position) <= fireRange);
+        if (plusBuffer)
+        {
+            return (Vector3.Distance(transform.position, player.transform.position) <= (fireRange + fireRangeBuffer));
+        }
+
+        else
+        {
+            return (Vector3.Distance(transform.position, player.transform.position) <= fireRange);
+        }
     }
 }
