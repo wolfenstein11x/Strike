@@ -44,7 +44,7 @@ public class Soldier : MonoBehaviour
         navMeshAgent.speed = walkSpeed;
     }
 
-    protected void Initialize()
+    protected virtual void Initialize()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
