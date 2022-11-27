@@ -3133,7 +3133,7 @@ Animator:
   m_GameObject: {fileID: 2843640155777462520}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 317bd1d2b778cf0448b311d615661b6e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0c8c2ce7581bef7459704dc3168da985, type: 2}
+  m_Controller: {fileID: 9100000, guid: 52172d565b0a8b34983745bae03fdbc0, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -3215,9 +3215,10 @@ MonoBehaviour:
   walkSpeed: 2.5
   angleRange: 10
   spread: 3
-  fireRange: 15
+  fireRange: 25
   chaseRange: 40
   fireEffect: {fileID: 4023401285504526983}
+  fireRangeBuffer: 5
 --- !u!1001 &1906462520422081413
 PrefabInstance:
   m_ObjectHideFlags: 0

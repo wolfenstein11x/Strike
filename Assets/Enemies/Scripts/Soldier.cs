@@ -12,7 +12,7 @@ public class Soldier : MonoBehaviour
     public AudioSource gunSound;
     public Projectile projectile;
     public Transform projectileSpawnPoint;
-    [SerializeField] float shootForce = 5f;
+    public float shootForce = 5f;
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float walkSpeed = 2.5f;
     [SerializeField] float angleRange = 10f;
@@ -168,12 +168,12 @@ public class Soldier : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(startPoint, dir, out hit, fireRange, shootableLayers) && WithinAngle(dir))
         {
-            //Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
+            Debug.DrawRay(startPoint, dir * hit.distance, Color.green);
             return true;
         }
         else
         {
-            //Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
+            Debug.DrawRay(startPoint, dir * fireRange, Color.yellow);
             return false;
         }
 

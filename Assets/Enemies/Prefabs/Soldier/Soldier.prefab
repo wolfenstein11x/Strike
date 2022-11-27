@@ -2314,7 +2314,7 @@ MonoBehaviour:
   walkSpeed: 2.5
   angleRange: 10
   spread: 0.5
-  fireRange: 20
+  fireRange: 25
   chaseRange: 40
 --- !u!65 &110939886
 BoxCollider:

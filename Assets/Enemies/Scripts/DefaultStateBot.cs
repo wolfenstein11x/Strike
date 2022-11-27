@@ -16,9 +16,18 @@ public class DefaultStateBot : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {   
-        // commented out for debugging, uncomment later
-        //bot.FaceTarget();
         bot.ChasePlayer();
+
+        if (bot.PlayerInSights())
+        {
+            Debug.Log("got em");
+            animator.SetTrigger("shootGuns");
+        }
+
+        else if (bot.WithinMaxFiringRange() && bot.WithinMinFiringRange())
+        {
+            //Debug.Log("shoot rockets");
+        }
     }
 
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
