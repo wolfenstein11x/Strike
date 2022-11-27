@@ -10,7 +10,7 @@ public class Bot : Soldier
     [SerializeField] float fireRangeMin = 15f;
     [SerializeField] float fireRangeBuffer = 5f;
 
-    private Vector3 heightOffset = new Vector3(0f, 1f, 0f);
+    private Vector3 heightOffset = new Vector3(0f, 0.4f, 0f);
 
     // Start is called before the first frame update
     void Start()
@@ -53,6 +53,35 @@ public class Bot : Soldier
         firedProjectile.GetComponent<Rigidbody>().AddForce(dir * shootForce, ForceMode.Impulse);
     }
 
+    public bool InRange(bool plusBuffer=false)
+    {
+        if (plusBuffer)
+        {
+            return Vector3.Distance(transform.position, player.transform.position) <= (navMeshAgent.stoppingDistance + fireRangeBuffer);
+        }
+
+        return Vector3.Distance(transform.position, player.transform.position) <= navMeshAgent.stoppingDistance;
+    }
+
+    public bool TooClose(bool minusBuffer=false)
+    {
+        if (minusBuffer)
+        {
+            return Vector3.Distance(transform.position, player.transform.position) <= (navMeshAgent.stoppingDistance - fireRangeBuffer);
+        }
+
+        return Vector3.Distance(transform.position, player.transform.position) <= fireRangeMin;
+    }
+
+
+
+
+
+
+
+
+
+    // currently not being used
     public override bool PlayerInSights()
     {
         if (Vector3.Distance(transform.position, player.transform.position) <= navMeshAgent.stoppingDistance) { return true; }
@@ -80,29 +109,5 @@ public class Bot : Soldier
         
     }
 
-    public bool WithinMaxFiringRange(bool plusBuffer = false)
-    {
-        if (plusBuffer)
-        {
-            return (Vector3.Distance(transform.position, player.transform.position) <= (fireRange + fireRangeBuffer));
-        }
-
-        else
-        {
-            return (Vector3.Distance(transform.position, player.transform.position) <= fireRange);
-        }
-    }
-
-    public bool WithinMinFiringRange(bool minusBuffer = false)
-    {
-        if (minusBuffer)
-        {
-            return (Vector3.Distance(transform.position, player.transform.position) >= (fireRangeMin - fireRangeBuffer));
-        }
-
-        else
-        {
-            return (Vector3.Distance(transform.position, player.transform.position) >= fireRangeMin);
-        }
-    }
+    
 }
