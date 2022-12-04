@@ -21,7 +21,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         // make first waypoint a random one
-        currentWaypointIndex = patrolPath.GetRandomWaypointIndex();
+        RandomizeWaypoint();
 
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
@@ -68,6 +68,27 @@ public class NPC : MonoBehaviour
         }
     }
 
+    public void Wander()
+    {
+        Vector3 nextPosition = transform.position;
+
+        if (patrolPath != null)
+        {
+            if (AtWaypoint())
+            {
+                ResetTimers();
+                RandomizeWaypoint();
+            }
+
+            nextPosition = GetCurrentWaypoint();
+        }
+
+        if (timeSinceArrivedAtWaypoint > waypointDwellTime)
+        {
+            MoveToPoint(nextPosition);
+        }
+    }
+
     public bool AtWaypoint()
     {
         float distanceToWaypoint = Vector3.Distance(transform.position, GetCurrentWaypoint());
@@ -82,6 +103,11 @@ public class NPC : MonoBehaviour
     private void CycleWayPoint()
     {
         currentWaypointIndex = patrolPath.GetNextIndex(currentWaypointIndex);
+    }
+
+    private void RandomizeWaypoint()
+    {
+        currentWaypointIndex = patrolPath.GetRandomWaypointIndex();
     }
 
     private void MoveToPoint(Vector3 pos)

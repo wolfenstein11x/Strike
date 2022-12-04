@@ -15,7 +15,7 @@ public class WalkStateNPC : StateMachineBehaviour
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        npc.Patrol();
+        npc.Wander();
         npc.UpdateTimers();
         npc.UpdateAnimator();
     }
