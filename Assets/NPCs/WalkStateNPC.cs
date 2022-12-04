@@ -2,31 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackStateBot : StateMachineBehaviour
+public class WalkStateNPC : StateMachineBehaviour
 {
-    Bot bot;
+    NPC npc;
 
+    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        bot = animator.GetComponent<Bot>();
+        npc = animator.GetComponent<NPC>();
     }
 
+    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!bot.InRange(true))
-        {
-            animator.SetTrigger("disEngage");
-        }
-
-        else if (bot.TooClose())
-        {
-            bot.RotateBody(30);
-        }
+        npc.Patrol();
+        npc.UpdateTimers();
+        npc.UpdateAnimator();
     }
 
+    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("shootGuns");
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

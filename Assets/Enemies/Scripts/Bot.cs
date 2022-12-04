@@ -9,12 +9,15 @@ public class Bot : Soldier
     [SerializeField] Transform[] projectileSpawnPoints;
     [SerializeField] float fireRangeMin = 15f;
     [SerializeField] float fireRangeBuffer = 5f;
+    [SerializeField] Transform body;
 
     private Vector3 heightOffset = new Vector3(0f, 0.4f, 0f);
+    private bool bodyRotatedDown;
 
     // Start is called before the first frame update
     void Start()
     {
+        bodyRotatedDown = false;
         Initialize();
     }
 
@@ -52,6 +55,35 @@ public class Bot : Soldier
         // add force to projectile so it moves
         firedProjectile.GetComponent<Rigidbody>().AddForce(dir * shootForce, ForceMode.Impulse);
     }
+
+    public void RotateBody(float degrees)
+    {
+        if (bodyRotatedDown) { return; }
+
+        body.Rotate(0, degrees, 0);
+
+        bodyRotatedDown = true;
+        Debug.Log("rotated");
+        
+    }
+
+    IEnumerator RotateCoroutine(float degrees, float degreesPer, float rotateSpeed)
+    {
+        float degreesRotated = 0;
+
+        while (Mathf.Abs(degreesRotated) < Mathf.Abs(degrees))
+        {
+            body.Rotate(0f, degreesPer, 0f, Space.Self);
+            degreesRotated += degreesPer;
+            yield return new WaitForSeconds(1 / rotateSpeed);
+        }
+
+        bodyRotatedDown = true;
+
+    }
+
+   
+
 
     public bool InRange(bool plusBuffer=false)
     {

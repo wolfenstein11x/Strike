@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackStateBot : StateMachineBehaviour
+public class IdleStateBot : StateMachineBehaviour
 {
     Bot bot;
 
@@ -13,20 +13,15 @@ public class AttackStateBot : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (!bot.InRange(true))
+        if (!bot.TooClose())
         {
-            animator.SetTrigger("disEngage");
-        }
-
-        else if (bot.TooClose())
-        {
-            bot.RotateBody(30);
+            animator.SetTrigger("shootGuns");
         }
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        animator.ResetTrigger("shootGuns");
+        
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
