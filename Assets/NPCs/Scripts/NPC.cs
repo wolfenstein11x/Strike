@@ -15,6 +15,7 @@ public class NPC : MonoBehaviour
 
     int currentWaypointIndex = 0;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
+    float waypointDwellTime; 
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class NPC : MonoBehaviour
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         navMeshAgent.speed = walkSpeed;
+        waypointDwellTime = waypointDwellTimeMin;
+
     }
 
     // Update is called once per frame
@@ -49,14 +52,14 @@ public class NPC : MonoBehaviour
         {
             if (AtWaypoint())
             {
-                timeSinceArrivedAtWaypoint = 0;
+                ResetTimers();
                 CycleWayPoint();
             }
 
             nextPosition = GetCurrentWaypoint();
         }
 
-        if (timeSinceArrivedAtWaypoint > waypointDwellTimeMin)
+        if (timeSinceArrivedAtWaypoint > waypointDwellTime)
         {
             MoveToPoint(nextPosition);
         }
@@ -86,6 +89,12 @@ public class NPC : MonoBehaviour
     public void UpdateTimers()
     {
         timeSinceArrivedAtWaypoint += Time.deltaTime;
+    }
+
+    void ResetTimers()
+    {
+        timeSinceArrivedAtWaypoint = 0;
+        waypointDwellTime = waypointDwellTimeMin * Random.Range(1f, 2f);
     }
 
     public void UpdateAnimator()
