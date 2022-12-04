@@ -20,6 +20,9 @@ public class NPC : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // make first waypoint a random one
+        currentWaypointIndex = patrolPath.GetRandomWaypointIndex();
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         animator = GetComponent<Animator>();
         navMeshAgent.speed = walkSpeed;

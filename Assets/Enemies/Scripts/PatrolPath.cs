@@ -31,4 +31,9 @@ public class PatrolPath : MonoBehaviour
 
         else return 0;
     }
+
+    public int GetRandomWaypointIndex()
+    {
+        return Random.Range(0, transform.childCount);
+    }
 }
