@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour
 {
     [SerializeField] PatrolPath patrolPath;
     [SerializeField] float waypointTolerance = 1f;
-    [SerializeField] float waypointDwellTime = 3f;
+    [SerializeField] float waypointDwellTimeMin = 3f;
     [SerializeField] float walkSpeed = 2.5f;
 
     NavMeshAgent navMeshAgent;
@@ -56,7 +56,7 @@ public class NPC : MonoBehaviour
             nextPosition = GetCurrentWaypoint();
         }
 
-        if (timeSinceArrivedAtWaypoint > waypointDwellTime)
+        if (timeSinceArrivedAtWaypoint > waypointDwellTimeMin)
         {
             MoveToPoint(nextPosition);
         }
