@@ -889,6 +889,7 @@ GameObject:
   - component: {fileID: 7545109032463849841}
   - component: {fileID: 7545109032454341030}
   - component: {fileID: 7545109032454341029}
+  - component: {fileID: 8271979407844161551}
   m_Layer: 0
   m_Name: Felipo
   m_TagString: Untagged
@@ -903,7 +904,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7545109032454460929}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 83.99918, y: 0, z: -21.297424}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -954,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 2
+  waypointTolerance: 4
   waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &7545109032454341029
@@ -979,6 +980,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &8271979407844161551
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7545109032454460929}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4066162, y: 1.8059094, z: 0.2966919}
+  m_Center: {x: -0.0036621094, y: 0.9084796, z: -0.0073547363}
 --- !u!1 &7545109032454464431
 GameObject:
   m_ObjectHideFlags: 0

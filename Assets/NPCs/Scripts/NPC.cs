@@ -133,4 +133,9 @@ public class NPC : MonoBehaviour
         float speed = localVelocity.z;
         animator.SetFloat("ForwardSpeed", speed);
     }
+
+    public void TriggerScare()
+    {
+        animator.SetTrigger("scared");
+    }
 }

@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 2127376385124846217}
   - component: {fileID: 2127376385117442654}
   - component: {fileID: 2127376385117442653}
+  - component: {fileID: 6474864881832712252}
   m_Layer: 0
   m_Name: Charity
   m_TagString: Untagged
@@ -739,7 +740,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2127376385117292025}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 83.99918, y: 0, z: -0.976}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -790,7 +791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 2
+  waypointTolerance: 4
   waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &2127376385117442653
@@ -815,6 +816,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &6474864881832712252
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127376385117292025}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3618164, y: 1.779186, z: 0.26879883}
+  m_Center: {x: -0.010498047, y: 0.9030577, z: -0.030883789}
 --- !u!1 &2127376385117292141
 GameObject:
   m_ObjectHideFlags: 0

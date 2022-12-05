@@ -1217,6 +1217,7 @@ GameObject:
   - component: {fileID: 820958033158109599}
   - component: {fileID: 820958033150828872}
   - component: {fileID: 820958033150828875}
+  - component: {fileID: 4799796924636177530}
   m_Layer: 0
   m_Name: Denise
   m_TagString: Untagged
@@ -1231,7 +1232,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820958033150949103}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 83.99918, y: 0, z: -3.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1282,7 +1283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 2
+  waypointTolerance: 4
   waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &820958033150828875
@@ -1307,6 +1308,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &4799796924636177530
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820958033150949103}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.36993408, y: 1.7912564, z: 0.333313}
+  m_Center: {x: -0.000030517578, y: 0.9011531, z: -0.010955811}
 --- !u!1 &820958033150952225
 GameObject:
   m_ObjectHideFlags: 0

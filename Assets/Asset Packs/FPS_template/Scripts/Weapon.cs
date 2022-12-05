@@ -121,10 +121,18 @@ public class Weapon : MonoBehaviour
         Collider[] objectsInRange = Physics.OverlapSphere(hit.point, radius);
         foreach (Collider col in objectsInRange)
         {
+            // soldier is provoked if bullet hits near him
             Soldier enemy = col.GetComponent<Soldier>();
             if (enemy != null)
             {
                 enemy.SetProvoked(true);
+            }
+
+            // NPC gets scared if bullet hits near them
+            NPC npc = col.GetComponent<NPC>();
+            if (npc != null)
+            {
+                npc.TriggerScare();
             }
         }
     }
