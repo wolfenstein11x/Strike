@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 6288815148107598222}
   - component: {fileID: 6288815148121121384}
   - component: {fileID: 6288815148120035302}
+  - component: {fileID: 539351581}
   m_Layer: 6
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -389,6 +390,15 @@ Behaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6288815148114548618}
   m_Enabled: 1
+--- !u!45 &539351581
+Skybox:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6288815148114548618}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: 737024f24a4498b4ea58a67c1667a3db, type: 2}
 --- !u!1001 &324191826
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1243,6 +1253,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: rocketLauncher
       objectReference: {fileID: 0}
+    - target: {fileID: 6974898738970805550, guid: bbe2d0489842b514ca792930f3a88e49, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bbe2d0489842b514ca792930f3a88e49, type: 3}
 --- !u!4 &2046693843 stripped
@@ -1285,6 +1299,7 @@ MonoBehaviour:
   zoomedMuzzleFlash: {fileID: 0}
   gunSound: {fileID: 1956267862325774425}
   hitEffect: {fileID: 8427441504170647115, guid: fec5e7414d221af4f816b6bda4fb6018, type: 3}
+  provocationRadius: 10
   reticle: {fileID: 0}
   hasZoom: 0
   zoomReticle: {fileID: 0}
@@ -1295,7 +1310,7 @@ MonoBehaviour:
   projectile: {fileID: 5533568530509412441, guid: 3d356a548a818264d947908f2372ee23, type: 3}
   spread: 0.1
   launchPoint: {fileID: 2046693843}
-  shootForce: 5
+  shootForce: 40
 --- !u!198 &7636684847572817181 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3649455909327213036, guid: bbe2d0489842b514ca792930f3a88e49, type: 3}
