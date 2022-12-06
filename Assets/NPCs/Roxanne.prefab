@@ -1705,6 +1705,7 @@ GameObject:
   - component: {fileID: 1631668986481148687}
   - component: {fileID: 1726689457465855458}
   - component: {fileID: 2050270633769511732}
+  - component: {fileID: 545793630449975814}
   m_Layer: 0
   m_Name: Roxanne
   m_TagString: Untagged
@@ -1770,8 +1771,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 2
-  waypointDwellTimeMin: 5
+  waypointTolerance: 4
+  waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &2050270633769511732
 NavMeshAgent:
@@ -1795,6 +1796,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &545793630449975814
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725773711170087963}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.39007568, y: 1.8346181, z: 0.29388428}
+  m_Center: {x: -0.0032043457, y: 0.92450047, z: -0.019256592}
 --- !u!1 &1725800140072930295
 GameObject:
   m_ObjectHideFlags: 0

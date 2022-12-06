@@ -273,6 +273,7 @@ GameObject:
   - component: {fileID: 5309661640073991054}
   - component: {fileID: 5259361608998706531}
   - component: {fileID: 4863721752618138549}
+  - component: {fileID: 1292904193677801956}
   m_Layer: 0
   m_Name: O'Brian
   m_TagString: Untagged
@@ -287,7 +288,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5258024473933380762}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 34.7, y: 0, z: -11.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -338,8 +339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 1
-  waypointDwellTime: 3
+  waypointTolerance: 4
+  waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &4863721752618138549
 NavMeshAgent:
@@ -363,6 +364,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &1292904193677801956
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5258024473933380762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4066162, y: 1.791256, z: 0.333313}
+  m_Center: {x: -0.0036621094, y: 0.9011531, z: 0.003692627}
 --- !u!1 &5258037949269142988
 GameObject:
   m_ObjectHideFlags: 0

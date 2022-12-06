@@ -695,14 +695,6 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 3463117203292385624, guid: 058558d8a860ae845b84308bf49aaafe, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3463117203292385624, guid: 058558d8a860ae845b84308bf49aaafe, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3467732404503359869, guid: 058558d8a860ae845b84308bf49aaafe, type: 3}
       propertyPath: m_RootOrder
       value: 16
@@ -1410,21 +1402,9 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 5746002916221184214, guid: 750fb281e1ff8b246ad5c127a1721bd2, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5746002916221184214, guid: 750fb281e1ff8b246ad5c127a1721bd2, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 5746002916221304689, guid: 750fb281e1ff8b246ad5c127a1721bd2, type: 3}
       propertyPath: m_Name
       value: Rufus
-      objectReference: {fileID: 0}
-    - target: {fileID: 5746002916221304689, guid: 750fb281e1ff8b246ad5c127a1721bd2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5746002916221537871, guid: 750fb281e1ff8b246ad5c127a1721bd2, type: 3}
       propertyPath: m_RootOrder
@@ -2733,7 +2713,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7545109032454776639, guid: 9eb00b91feeedac41b0793a7423e4b4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 36.4
+      value: 96.1
       objectReference: {fileID: 0}
     - target: {fileID: 7545109032454776639, guid: 9eb00b91feeedac41b0793a7423e4b4e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2741,7 +2721,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7545109032454776639, guid: 9eb00b91feeedac41b0793a7423e4b4e, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.13
+      value: 57.1
       objectReference: {fileID: 0}
     - target: {fileID: 7545109032454776639, guid: 9eb00b91feeedac41b0793a7423e4b4e, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2991,22 +2971,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keyvan
       objectReference: {fileID: 0}
-    - target: {fileID: 2027637430315902335, guid: f08c3e4aeec671345980be264e97a727, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2028552351843468422, guid: f08c3e4aeec671345980be264e97a727, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 2028552351843468422, guid: f08c3e4aeec671345980be264e97a727, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2028552351843468422, guid: f08c3e4aeec671345980be264e97a727, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2032943250333500579, guid: f08c3e4aeec671345980be264e97a727, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3716,10 +3684,6 @@ PrefabInstance:
       propertyPath: reticle
       value: 
       objectReference: {fileID: 172056679}
-    - target: {fileID: 1601060630842747923, guid: 456f71bac96badf45be898e997f90877, type: 3}
-      propertyPath: shootForce
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 1675044156410290505, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: reticle
       value: 
@@ -3734,7 +3698,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6288815148114185132, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 880.6
+      value: 931.4
       objectReference: {fileID: 0}
     - target: {fileID: 6288815148114185132, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: m_LocalPosition.y
@@ -3742,7 +3706,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6288815148114185132, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 880.2
+      value: 920.8
       objectReference: {fileID: 0}
     - target: {fileID: 6288815148114185132, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: m_LocalRotation.w
@@ -7468,22 +7432,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: O'Brian
       objectReference: {fileID: 0}
-    - target: {fileID: 5258024473933380762, guid: 67b3144156f3e56459614c5288f59fe8, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5259361608998706531, guid: 67b3144156f3e56459614c5288f59fe8, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 5259361608998706531, guid: 67b3144156f3e56459614c5288f59fe8, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5259361608998706531, guid: 67b3144156f3e56459614c5288f59fe8, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 67b3144156f3e56459614c5288f59fe8, type: 3}
 --- !u!4 &998961689 stripped
@@ -8699,7 +8651,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6280147642375554021, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.84
+      value: 95.9
       objectReference: {fileID: 0}
     - target: {fileID: 6280147642375554021, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8707,7 +8659,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6280147642375554021, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.6
+      value: 51.9
       objectReference: {fileID: 0}
     - target: {fileID: 6280147642375554021, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8741,22 +8693,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nancy
       objectReference: {fileID: 0}
-    - target: {fileID: 6283220096662282809, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6284557232127116224, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 6284557232127116224, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6284557232127116224, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f368ac8ad8e06b42aad195e098c2501, type: 3}
 --- !u!4 &1138664261 stripped
@@ -10592,14 +10532,6 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 1726689457465855458, guid: dc1f073fd04334e42b7a8b87e2b6aaa1, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 1726689457465855458, guid: dc1f073fd04334e42b7a8b87e2b6aaa1, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc1f073fd04334e42b7a8b87e2b6aaa1, type: 3}
 --- !u!4 &1351187281 stripped
@@ -10724,21 +10656,9 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 3000333409573466859, guid: 024d0176fc28a474f93cf48d98104d9f, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3000333409573466859, guid: 024d0176fc28a474f93cf48d98104d9f, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 3000333409573578060, guid: 024d0176fc28a474f93cf48d98104d9f, type: 3}
       propertyPath: m_Name
       value: Wayne
-      objectReference: {fileID: 0}
-    - target: {fileID: 3000333409573578060, guid: 024d0176fc28a474f93cf48d98104d9f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 024d0176fc28a474f93cf48d98104d9f, type: 3}
@@ -11615,22 +11535,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rafael
       objectReference: {fileID: 0}
-    - target: {fileID: 8350484733882572305, guid: 1afe7ad38f49953478d60043465f5f4e, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8350484733882714550, guid: 1afe7ad38f49953478d60043465f5f4e, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 8350484733882714550, guid: 1afe7ad38f49953478d60043465f5f4e, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8350484733882714550, guid: 1afe7ad38f49953478d60043465f5f4e, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1afe7ad38f49953478d60043465f5f4e, type: 3}
 --- !u!4 &1450120848 stripped
@@ -11912,22 +11820,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monique
       objectReference: {fileID: 0}
-    - target: {fileID: 7117687488645250566, guid: 52f55e15b47cf0f4598de733b8c37d2a, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7117687488645392801, guid: 52f55e15b47cf0f4598de733b8c37d2a, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 7117687488645392801, guid: 52f55e15b47cf0f4598de733b8c37d2a, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 7117687488645392801, guid: 52f55e15b47cf0f4598de733b8c37d2a, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7117687488645549880, guid: 52f55e15b47cf0f4598de733b8c37d2a, type: 3}
       propertyPath: m_RootOrder
       value: 10
@@ -15438,22 +15334,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lin-Kwan
       objectReference: {fileID: 0}
-    - target: {fileID: 6109924704379976106, guid: 6b4b11af63823904a81d7b5cb5e1ea70, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6111262406495279187, guid: 6b4b11af63823904a81d7b5cb5e1ea70, type: 3}
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 710179334}
-    - target: {fileID: 6111262406495279187, guid: 6b4b11af63823904a81d7b5cb5e1ea70, type: 3}
-      propertyPath: waypointTolerance
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6111262406495279187, guid: 6b4b11af63823904a81d7b5cb5e1ea70, type: 3}
-      propertyPath: waypointDwellTimeMin
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 6115670896064092278, guid: 6b4b11af63823904a81d7b5cb5e1ea70, type: 3}
       propertyPath: m_RootOrder
       value: 9

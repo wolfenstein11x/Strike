@@ -1219,13 +1219,14 @@ GameObject:
   - component: {fileID: 6169127068895844030}
   - component: {fileID: 6111262406495279187}
   - component: {fileID: 6867418137517407887}
+  - component: {fileID: 8630787452219524945}
   m_Layer: 0
   m_Name: Lin-Kwan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6115670896064092278
 Transform:
   m_ObjectHideFlags: 0
@@ -1284,8 +1285,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 2
-  waypointDwellTimeMin: 5
+  waypointTolerance: 4
+  waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &6867418137517407887
 NavMeshAgent:
@@ -1309,6 +1310,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &8630787452219524945
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6109924704379976106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3451538, y: 1.8025177, z: 0.25531006}
+  m_Center: {x: 0.000030517578, y: 0.89560974, z: -0.025665283}
 --- !u!1 &6109938746631497980
 GameObject:
   m_ObjectHideFlags: 0

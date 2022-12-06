@@ -1184,6 +1184,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7636684847010274115}
     - target: {fileID: 7990002339934473800, guid: b977c2c297368be4fb07385bc3a658ab, type: 3}
+      propertyPath: noiseRadius
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7990002339934473800, guid: b977c2c297368be4fb07385bc3a658ab, type: 3}
       propertyPath: timeBetweenShots
       value: 0.25
       objectReference: {fileID: 0}
@@ -1293,6 +1297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fpsCamera: {fileID: 6288815148113696174}
   range: 100
+  noiseRadius: 30
   damage: 30
   timeBetweenShots: 2
   muzzleFlash: {fileID: 7636684847572817181}
@@ -1310,7 +1315,7 @@ MonoBehaviour:
   projectile: {fileID: 5533568530509412441, guid: 3d356a548a818264d947908f2372ee23, type: 3}
   spread: 0.1
   launchPoint: {fileID: 2046693843}
-  shootForce: 40
+  shootForce: 35
 --- !u!198 &7636684847572817181 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3649455909327213036, guid: bbe2d0489842b514ca792930f3a88e49, type: 3}
@@ -1395,6 +1400,10 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 7636684845710948953}
+    - target: {fileID: 6797316991260352357, guid: 7416c623616599c46b23db42b3edfc4c, type: 3}
+      propertyPath: noiseRadius
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 6797316991260352357, guid: 7416c623616599c46b23db42b3edfc4c, type: 3}
       propertyPath: zoomReticle
       value: 
@@ -1681,6 +1690,10 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 8207094996859941064}
+    - target: {fileID: 8856324572766225896, guid: 6eef6fe117565ce4e8ec76b28d7bef7c, type: 3}
+      propertyPath: noiseRadius
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6eef6fe117565ce4e8ec76b28d7bef7c, type: 3}
 --- !u!4 &5490695939781062630 stripped
@@ -1768,6 +1781,10 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 6239726437621970551}
+    - target: {fileID: 6967113988461530239, guid: cc94b5a14a79dd24da9a3b34b57b366f, type: 3}
+      propertyPath: noiseRadius
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8635498709074876315, guid: cc94b5a14a79dd24da9a3b34b57b366f, type: 3}
       propertyPath: m_RootOrder
       value: 2

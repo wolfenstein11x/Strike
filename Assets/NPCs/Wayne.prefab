@@ -1699,6 +1699,7 @@ GameObject:
   - component: {fileID: 3000333409580870204}
   - component: {fileID: 3000333409573466859}
   - component: {fileID: 3000333409573466856}
+  - component: {fileID: 9110421864285327774}
   m_Layer: 0
   m_Name: Wayne
   m_TagString: Untagged
@@ -1713,7 +1714,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3000333409573578060}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 83.99918, y: 0, z: -29.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1764,7 +1765,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 2
+  waypointTolerance: 4
   waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &3000333409573466856
@@ -1789,6 +1790,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &9110421864285327774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3000333409573578060}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37945557, y: 1.7925341, z: 0.2626953}
+  m_Center: {x: 0.0030822754, y: 0.9061922, z: -0.018432617}
 --- !u!1 &3000333409573578456
 GameObject:
   m_ObjectHideFlags: 0

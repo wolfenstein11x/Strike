@@ -19,6 +19,7 @@ public class Soldier : MonoBehaviour
     public float spread = 3f;
 
     public float fireRange = 10f;
+    public float noiseRange = 30f;
     public float chaseRange = 25f;
 
     protected NavMeshAgent navMeshAgent;
@@ -134,6 +135,7 @@ public class Soldier : MonoBehaviour
         // play audio and visual effects
         muzzleFlash.Play();
         gunSound.Play();
+        CreateNoiseProvocationSphere(noiseRange);
 
         // generate spread vector
         float xSpread = Random.Range(-spread, spread);
@@ -225,6 +227,28 @@ public class Soldier : MonoBehaviour
     public void SetProvoked(bool status)
     {
         isProvoked = status;
+    }
+
+    // TODO: make this a utility function since player and soldier both use it
+    private void CreateNoiseProvocationSphere(float radius)
+    {
+        Collider[] objectsInRange = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider col in objectsInRange)
+        {
+            // soldier is provoked if he hears gunshot
+            Soldier enemy = col.GetComponent<Soldier>();
+            if (enemy != null)
+            {
+                enemy.SetProvoked(true);
+            }
+
+            // NPC gets scared if they hear gunshot
+            NPC npc = col.GetComponent<NPC>();
+            if (npc != null)
+            {
+                npc.TriggerScare();
+            }
+        }
     }
 
 }

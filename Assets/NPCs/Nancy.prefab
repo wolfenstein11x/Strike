@@ -1187,6 +1187,7 @@ GameObject:
   - component: {fileID: 6225539448719641901}
   - component: {fileID: 6284557232127116224}
   - component: {fileID: 6680337087781774622}
+  - component: {fileID: 61577363334058549}
   m_Layer: 0
   m_Name: Nancy
   m_TagString: Untagged
@@ -1201,7 +1202,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6283220096662282809}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 34.7, y: 0, z: -4.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1252,8 +1253,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 1
-  waypointDwellTime: 3
+  waypointTolerance: 4
+  waypointDwellTimeMin: 3
   walkSpeed: 2
 --- !u!195 &6680337087781774622
 NavMeshAgent:
@@ -1277,6 +1278,19 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!65 &61577363334058549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6283220096662282809}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4039917, y: 1.8109653, z: 0.29345703}
+  m_Center: {x: -0.0030822754, y: 0.92155135, z: -0.021484375}
 --- !u!1 &6283246980938580093
 GameObject:
   m_ObjectHideFlags: 0

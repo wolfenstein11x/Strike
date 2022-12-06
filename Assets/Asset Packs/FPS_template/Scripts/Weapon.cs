@@ -7,6 +7,7 @@ public class Weapon : MonoBehaviour
 {
     public Camera fpsCamera;
     public float range = 100f;
+    public float noiseRadius = 10f;
     [SerializeField] float damage = 30f;
     public float timeBetweenShots = 1f;
     [SerializeField] ParticleSystem muzzleFlash;
@@ -68,6 +69,7 @@ public class Weapon : MonoBehaviour
 
         PlayMuzzleFlash();
         gunSound.Play();
+        CreateNoiseProvocationSphere(noiseRadius);
         ProcessRaycast();
         ammoTracker.DecrementAmmo();
 
@@ -129,6 +131,27 @@ public class Weapon : MonoBehaviour
             }
 
             // NPC gets scared if bullet hits near them
+            NPC npc = col.GetComponent<NPC>();
+            if (npc != null)
+            {
+                npc.TriggerScare();
+            }
+        }
+    }
+
+    private void CreateNoiseProvocationSphere(float radius)
+    {
+        Collider[] objectsInRange = Physics.OverlapSphere(transform.position, radius);
+        foreach (Collider col in objectsInRange)
+        {
+            // soldier is provoked if he hears gunshot
+            Soldier enemy = col.GetComponent<Soldier>();
+            if (enemy != null)
+            {
+                enemy.SetProvoked(true);
+            }
+
+            // NPC gets scared if they hear gunshot
             NPC npc = col.GetComponent<NPC>();
             if (npc != null)
             {
