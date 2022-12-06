@@ -230,7 +230,7 @@ public class Soldier : MonoBehaviour
     }
 
     // TODO: make this a utility function since player and soldier both use it
-    private void CreateNoiseProvocationSphere(float radius)
+    public void CreateNoiseProvocationSphere(float radius)
     {
         Collider[] objectsInRange = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider col in objectsInRange)

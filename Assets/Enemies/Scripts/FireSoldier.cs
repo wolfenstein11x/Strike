@@ -33,6 +33,9 @@ public class FireSoldier : Soldier
 
     public bool InFiringRange(bool plusBuffer=false)
     {
+        float distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        //Debug.Log("distance: " + distanceToPlayer);
+
         if (plusBuffer)
         {
             return (Vector3.Distance(transform.position, player.transform.position) <= (fireRange + fireRangeBuffer));

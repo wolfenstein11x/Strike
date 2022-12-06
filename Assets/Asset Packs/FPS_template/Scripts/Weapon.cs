@@ -69,7 +69,7 @@ public class Weapon : MonoBehaviour
 
         PlayMuzzleFlash();
         gunSound.Play();
-        CreateNoiseProvocationSphere(noiseRadius);
+        //CreateNoiseProvocationSphere(noiseRadius);
         ProcessRaycast();
         ammoTracker.DecrementAmmo();
 

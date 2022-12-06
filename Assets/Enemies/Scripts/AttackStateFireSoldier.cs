@@ -12,6 +12,8 @@ public class AttackStateFireSoldier : StateMachineBehaviour
         fireSoldier = animator.GetComponent<FireSoldier>();
         fireSoldier.Halt();
         fireSoldier.ToggleFlamethrower(true);
+
+        fireSoldier.CreateNoiseProvocationSphere(fireSoldier.noiseRange);
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

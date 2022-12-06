@@ -3157,7 +3157,7 @@ NavMeshAgent:
   m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 1000
-  m_StoppingDistance: 5
+  m_StoppingDistance: 15
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -3204,7 +3204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
-  waypointTolerance: 6
+  waypointTolerance: 14
   waypointDwellTime: 3
   muzzleFlash: {fileID: 4023401285489595399}
   gunSound: {fileID: 0}
@@ -3215,7 +3215,8 @@ MonoBehaviour:
   walkSpeed: 2.5
   angleRange: 10
   spread: 3
-  fireRange: 25
+  fireRange: 16
+  noiseRange: 30
   chaseRange: 40
   fireEffect: {fileID: 4023401285504526983}
   fireRangeBuffer: 5
