@@ -17233,7 +17233,7 @@ PrefabInstance:
     - target: {fileID: 2348601484008247416, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
       propertyPath: projectile
       value: 
-      objectReference: {fileID: 6090904419207060993, guid: 3d356a548a818264d947908f2372ee23, type: 3}
+      objectReference: {fileID: 997937920884828904, guid: 7ba1af711afe24542895ebd85e511203, type: 3}
     - target: {fileID: 2348601484008247416, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
       propertyPath: shootForce
       value: 35
@@ -17286,6 +17286,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier3
       objectReference: {fileID: 0}
+    - target: {fileID: 3496165832944763621, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: d238b817d92f8584f9a6571e6be181e6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
 --- !u!1001 &3705600416174200206
