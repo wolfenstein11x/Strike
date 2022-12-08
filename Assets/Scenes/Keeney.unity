@@ -445,7 +445,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1158279244475749862, guid: 208f5daa0e065844da84d87729b3472b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 208f5daa0e065844da84d87729b3472b, type: 3}
@@ -2373,7 +2373,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1055126831169006308, guid: 9cd01101dc6dc4046a2cc6ed381b6607, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2213405509245198845, guid: 9cd01101dc6dc4046a2cc6ed381b6607, type: 3}
       propertyPath: weaponDamage
@@ -14094,7 +14094,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 875221971293365960, guid: 886edb753b2b28d4bae66c873363b91e, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2032919385066051273, guid: 886edb753b2b28d4bae66c873363b91e, type: 3}
       propertyPath: patrolPath
@@ -16838,6 +16838,10 @@ PrefabInstance:
     - target: {fileID: 3496165832937218169, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
       propertyPath: m_Name
       value: Soldier3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3496165832937218169, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
