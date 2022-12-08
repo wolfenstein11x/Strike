@@ -12774,10 +12774,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2843640155777416488, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843640155777455748, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2843640155777458724, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2843640155777462520, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: m_Name
       value: FireSoldier
       objectReference: {fileID: 0}
+    - target: {fileID: 2843640155790971114, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b599c004b71afff4d9318c349bbb7d53, type: 2}
     - target: {fileID: 4396566741101950032, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: patrolPath
       value: 
@@ -16775,14 +16791,6 @@ PrefabInstance:
       propertyPath: patrolPath
       value: 
       objectReference: {fileID: 422839086}
-    - target: {fileID: 2348601484008247416, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
-      propertyPath: projectile
-      value: 
-      objectReference: {fileID: 997937920884828904, guid: 7ba1af711afe24542895ebd85e511203, type: 3}
-    - target: {fileID: 2348601484008247416, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
-      propertyPath: shootForce
-      value: 35
-      objectReference: {fileID: 0}
     - target: {fileID: 3496165832936926809, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -16831,14 +16839,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier3
       objectReference: {fileID: 0}
-    - target: {fileID: 3496165832937218169, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3496165832944763621, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: d238b817d92f8584f9a6571e6be181e6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
 --- !u!1001 &3705600416174200206
