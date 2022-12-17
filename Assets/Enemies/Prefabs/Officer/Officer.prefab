@@ -1525,7 +1525,7 @@ GameObject:
   - component: {fileID: 9045913305603331831}
   m_Layer: 0
   m_Name: Officer
-  m_TagString: BigBubba
+  m_TagString: Officer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1537,7 +1537,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7897768861205057020}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 843.5646, y: 0, z: 929.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1583,7 +1583,7 @@ Animator:
   m_GameObject: {fileID: 7897768861205057020}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 317bd1d2b778cf0448b311d615661b6e, type: 3}
-  m_Controller: {fileID: 9100000, guid: 0c8c2ce7581bef7459704dc3168da985, type: 2}
+  m_Controller: {fileID: 9100000, guid: dcb19145741564b479346457d25cec32, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1631,7 +1631,7 @@ MonoBehaviour:
   waypointTolerance: 6
   waypointDwellTime: 3
   muzzleFlash: {fileID: 8023376141558723959}
-  gunSound: {fileID: 0}
+  gunSound: {fileID: 3285081219876755065}
   projectile: {fileID: 3544215196483897492, guid: 1c3907361fc9b73478c55c05f7693b79, type: 3}
   projectileSpawnPoint: {fileID: 9045913305248803797}
   shootForce: 50
@@ -1807,7 +1807,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ea5e410f03a4bf408df1fdaf4d87cd9, type: 2}
+  - {fileID: 2100000, guid: 3425698b8034fe74788abb704c8f8077, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2369,7 +2369,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 6ea5e410f03a4bf408df1fdaf4d87cd9, type: 2}
+  - {fileID: 2100000, guid: 3425698b8034fe74788abb704c8f8077, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3442,6 +3442,11 @@ PrefabInstance:
 --- !u!4 &3285081219876755064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9043553506650160178, guid: 3d56928119dfa324aa6f0a0e2f938072, type: 3}
+  m_PrefabInstance: {fileID: 5771314583659702858}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &3285081219876755065 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 9043553506650160179, guid: 3d56928119dfa324aa6f0a0e2f938072, type: 3}
   m_PrefabInstance: {fileID: 5771314583659702858}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6028377929100655531

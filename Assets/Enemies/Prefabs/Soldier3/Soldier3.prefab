@@ -955,7 +955,7 @@ GameObject:
   - component: {fileID: 2348601484039895922}
   m_Layer: 0
   m_Name: Soldier3
-  m_TagString: BigBubba
+  m_TagString: BigGunner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

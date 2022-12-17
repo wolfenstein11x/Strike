@@ -6,6 +6,7 @@ using UnityEngine;
 public class MissionObjective
 {
     public ObjectiveType objectiveType;
+    public string objectiveTag;
     public int requiredAmount;
     public int currentAmount;
 
@@ -16,6 +17,12 @@ public class MissionObjective
 
     public void EnemyKilled(string tag)
     {
+        if (objectiveTag != "none" && tag != objectiveTag) 
+        {
+            Debug.Log("ya killed the wrong gah, gah");
+            return; 
+        }
+
         if (objectiveType == ObjectiveType.Kill)
         {
             currentAmount++;
