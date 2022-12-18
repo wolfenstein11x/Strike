@@ -15,6 +15,11 @@ public class MissionObjective
         return (currentAmount >= requiredAmount);
     }
 
+    public bool DestinationReached(string tag)
+    {
+        return objectiveTag == tag;
+    }
+
     public void EnemyKilled(string tag)
     {
         if (objectiveTag != "none" && tag != objectiveTag) 
@@ -41,11 +46,12 @@ public class MissionObjective
         {
             currentAmount++;
         }
-    }
+    } 
 }
 
 public enum ObjectiveType
 {
     Kill,
-    Gathering
+    Gathering,
+    GoTo
 }

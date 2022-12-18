@@ -301,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &49964450
 Transform:
   m_ObjectHideFlags: 0
@@ -9974,6 +9974,67 @@ Transform:
   m_Father: {fileID: 710179333}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1254715951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 936.28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 912.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784301, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_Name
+      value: Destination (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784301, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
 --- !u!1001 &1273245257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10297,11 +10358,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mission:
     isActive: 0
-    title: Sniper rifle
-    description: Get sniper rifle
+    title: Food run
+    description: Go to Burger Queen
     objective:
-      objectiveType: 1
-      objectiveTag: SniperRifle
+      objectiveType: 2
+      objectiveTag: Burger Queen
       requiredAmount: 2
       currentAmount: 0
 --- !u!4 &1302110689
@@ -17550,6 +17611,67 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 886b82c193965b248afd7001463d59f0, type: 3}
+--- !u!1001 &5996698419764204639
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_RootOrder
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 842.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 857.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784301, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_Name
+      value: Destination
+      objectReference: {fileID: 0}
+    - target: {fileID: 5996698418585784301, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
+      propertyPath: m_TagString
+      value: Burger Queen
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
 --- !u!1001 &6981839604045362573
 PrefabInstance:
   m_ObjectHideFlags: 0

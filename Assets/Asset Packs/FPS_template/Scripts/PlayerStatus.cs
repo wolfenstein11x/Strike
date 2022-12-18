@@ -32,5 +32,16 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    public void RecordArrivedAtPlace(string tag)
+    {
+        if (mission.isActive)
+        {
+            if (mission.objective.DestinationReached(tag))
+            {
+                mission.Complete();
+            }
+        }
+    }
+
     
 }
