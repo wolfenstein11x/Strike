@@ -8,8 +8,11 @@ public class MissionGiver : MonoBehaviour
     
     PlayerStatus player;
 
+    [SerializeField] GameObject[] missionItems;
+
     private void Start()
     {
+        activateMissionItems(false);
         player = FindObjectOfType<PlayerStatus>();
     }
 
@@ -20,5 +23,15 @@ public class MissionGiver : MonoBehaviour
 
         Debug.Log("New mission: " + mission.title);
         Debug.Log(mission.description);
+
+        activateMissionItems(true);
+    }
+
+    void activateMissionItems(bool status)
+    {
+        foreach (GameObject item in missionItems)
+        {
+            item.SetActive(status);
+        }
     }
 }
