@@ -10,6 +10,7 @@ TagManager:
   - SniperRifle
   - AK47
   - Burger Queen
+  - Sniper
   layers:
   - Default
   - TransparentFX

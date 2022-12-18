@@ -11,6 +11,7 @@ public class MissionGiver : MonoBehaviour
     MissionText missionText;
 
     [SerializeField] GameObject[] missionItems;
+    [SerializeField] float delayTime = 3f;
 
     private void Start()
     {
@@ -35,7 +36,7 @@ public class MissionGiver : MonoBehaviour
 
     IEnumerator GiveMissionCoroutine()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(delayTime);
 
         player.mission = mission;
         mission.isActive = true;

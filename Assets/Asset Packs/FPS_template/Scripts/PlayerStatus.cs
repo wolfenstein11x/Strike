@@ -1,10 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerStatus : MonoBehaviour
 {
     public Mission mission;
+
+    MissionText missionText;
+
+    private void Start()
+    {
+        missionText = FindObjectOfType<MissionText>();
+    }
+
+    void SetObjectiveCompleteText()
+    {
+        TextMeshProUGUI currentMissionText = missionText.GetComponent<TextMeshProUGUI>();
+        currentMissionText.text = "Objective complete";
+    }
 
     public void RecordKill(string tag)
     {
@@ -15,6 +29,7 @@ public class PlayerStatus : MonoBehaviour
             if (mission.objective.ObjectiveReached())
             {
                 mission.Complete();
+                SetObjectiveCompleteText();
             }
         }
     }
@@ -28,6 +43,7 @@ public class PlayerStatus : MonoBehaviour
             if (mission.objective.ObjectiveReached())
             {
                 mission.Complete();
+                SetObjectiveCompleteText();
             }
         }
     }
@@ -39,6 +55,7 @@ public class PlayerStatus : MonoBehaviour
             if (mission.objective.DestinationReached(tag))
             {
                 mission.Complete();
+                SetObjectiveCompleteText();
             }
         }
     }
