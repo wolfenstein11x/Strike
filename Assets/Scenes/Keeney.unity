@@ -301,7 +301,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &49964450
 Transform:
   m_ObjectHideFlags: 0
@@ -3995,13 +3995,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 544777923}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 912.73, y: 0, z: 940.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 1977347879}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &549814558
 GameObject:
@@ -4764,6 +4764,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 939560728912338487, guid: c619a8bfbbefa914ca2eddc88e963aa3, type: 3}
   m_PrefabInstance: {fileID: 628773629}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &631281861
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 631281862}
+  - component: {fileID: 631281863}
+  m_Layer: 0
+  m_Name: MissionGiver (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &631281862
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631281861}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1977347879}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &631281863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 631281861}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b874f3a0d805294458ed1c0160cbe298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mission:
+    nextMission: {fileID: 0}
+    isActive: 0
+    title: Kill em
+    description: Kill the officers
+    objective:
+      objectiveType: 0
+      objectiveTag: Officer
+      requiredAmount: 2
+      currentAmount: 0
 --- !u!1001 &642374949
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9983,7 +10037,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10357,13 +10411,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mission:
+    nextMission: {fileID: 1872377737}
     isActive: 0
-    title: Food run
-    description: Go to Burger Queen
+    title: Snipe 'em
+    description: Get sniper rifle
     objective:
-      objectiveType: 2
-      objectiveTag: Burger Queen
-      requiredAmount: 2
+      objectiveType: 1
+      objectiveTag: SniperRifle
+      requiredAmount: 1
       currentAmount: 0
 --- !u!4 &1302110689
 Transform:
@@ -10372,13 +10427,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1302110687}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_Father: {fileID: 1977347879}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1305960728
 PrefabInstance:
@@ -14823,6 +14878,60 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8990448369261287183, guid: bc7f1602ac106c54d84d45bb31052e77, type: 3}
   m_PrefabInstance: {fileID: 1852608879}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1872377736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1872377738}
+  - component: {fileID: 1872377737}
+  m_Layer: 0
+  m_Name: MissionGiver (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1872377737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872377736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b874f3a0d805294458ed1c0160cbe298, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mission:
+    nextMission: {fileID: 631281863}
+    isActive: 0
+    title: Food run
+    description: Go to Burger Queen
+    objective:
+      objectiveType: 2
+      objectiveTag: Burger Queen
+      requiredAmount: 2
+      currentAmount: 0
+--- !u!4 &1872377738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1872377736}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1977347879}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1872623776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15282,7 +15391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266119603645972285, guid: dbe56adae3393f245ac691aa5de84496, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8266119603645972285, guid: dbe56adae3393f245ac691aa5de84496, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15483,7 +15592,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1970385508
 PrefabInstance:
@@ -15613,6 +15722,41 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5175962577150429921, guid: 982d726ed08ab1b4ebb1045067d42fe5, type: 3}
   m_PrefabInstance: {fileID: 1976913808}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1977347878
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1977347879}
+  m_Layer: 0
+  m_Name: MissionSequence
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1977347879
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1977347878}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 544777926}
+  - {fileID: 1302110689}
+  - {fileID: 1872377738}
+  - {fileID: 631281862}
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1986248039
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17451,6 +17595,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Soldier3
       objectReference: {fileID: 0}
+    - target: {fileID: 3496165832937218169, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 417b59ea07b23804dad2f6be0530d7ca, type: 3}
 --- !u!1001 &3396509227002743487
@@ -17462,7 +17610,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 501802674198384024, guid: 24d74720864282e4e9b73b3b5e281cc3, type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 501802674198384024, guid: 24d74720864282e4e9b73b3b5e281cc3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17620,7 +17768,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 5996698418585784299, guid: 6311d48bfa8516c47aebd326e51912c5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17817,7 +17965,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8266119603645972285, guid: dbe56adae3393f245ac691aa5de84496, type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8266119603645972285, guid: dbe56adae3393f245ac691aa5de84496, type: 3}
       propertyPath: m_LocalPosition.x
