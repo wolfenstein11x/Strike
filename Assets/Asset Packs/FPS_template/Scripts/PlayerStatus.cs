@@ -19,5 +19,18 @@ public class PlayerStatus : MonoBehaviour
         }
     }
 
+    public void RecordItemCollected(string tag)
+    {
+        if (mission.isActive)
+        {
+            mission.objective.ItemCollected(tag);
+
+            if (mission.objective.ObjectiveReached())
+            {
+                mission.Complete();
+            }
+        }
+    }
+
     
 }

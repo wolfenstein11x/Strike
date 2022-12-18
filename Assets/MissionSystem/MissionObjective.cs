@@ -19,7 +19,7 @@ public class MissionObjective
     {
         if (objectiveTag != "none" && tag != objectiveTag) 
         {
-            Debug.Log("ya killed the wrong gah, gah");
+            //Debug.Log("ya killed the wrong gah, gah");
             return; 
         }
 
@@ -29,8 +29,14 @@ public class MissionObjective
         }
     }
 
-    public void ItemCollected()
+    public void ItemCollected(string tag)
     {
+        if (objectiveTag != "none" && tag != objectiveTag)
+        {
+            //Debug.Log("ya picked up the wrong thing, gah");
+            return;
+        }
+
         if (objectiveType == ObjectiveType.Gathering)
         {
             currentAmount++;

@@ -7,6 +7,8 @@ TagManager:
   - BigBubba
   - Officer
   - BigGunner
+  - SniperRifle
+  - AK47
   layers:
   - Default
   - TransparentFX

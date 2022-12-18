@@ -7,10 +7,12 @@ public class GunPickup : MonoBehaviour
     [SerializeField] AudioSource pickupSound;
     [SerializeField] GameObject playerGun;
 
+    PlayerStatus player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = FindObjectOfType<PlayerStatus>();
     }
 
     // Update is called once per frame
@@ -24,8 +26,9 @@ public class GunPickup : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             pickupSound.Play();
-            playerGun.SetActive(true);
-            GetComponent<MeshRenderer>().enabled = false;
+            player.RecordItemCollected(gameObject.tag);
+            //playerGun.SetActive(true);
+            GetComponentInChildren<MeshRenderer>().enabled = false;
             Destroy(gameObject, 0.5f);
         }
     }
