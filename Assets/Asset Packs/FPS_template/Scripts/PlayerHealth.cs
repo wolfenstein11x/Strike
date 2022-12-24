@@ -7,6 +7,8 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] int maxHealth = 100;
     [SerializeField] HealthBar healthBar;
 
+    DamageCanvas damageCanvas;
+
     int currentHealth;
 
     // Start is called before the first frame update
@@ -14,10 +16,14 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthBar.SetHealth(currentHealth);
+
+        damageCanvas = FindObjectOfType<DamageCanvas>();
     }
 
     public void TakeDamage(int damage)
     {
+        damageCanvas.ActivateRandomBloodSplat();
+
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
     }
