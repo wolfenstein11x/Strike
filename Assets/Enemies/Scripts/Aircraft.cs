@@ -10,13 +10,12 @@ public class Aircraft : MonoBehaviour
     [SerializeField] Bomb bomb;
     [SerializeField] Transform bombSpawnPoint;
     [SerializeField] float timeBetweenBombs = 1f;
-
+    
     Vector3 destination;
     PlayerStatus player;
     AudioSource jetSound;
     bool playedjetSound = false;
 
-    bool allowInvoke = true;
     bool readyToDropBomb = true;
 
     // Start is called before the first frame update

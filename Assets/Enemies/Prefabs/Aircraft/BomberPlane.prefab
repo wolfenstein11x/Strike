@@ -198,7 +198,7 @@ MonoBehaviour:
   attackRange: 50
   bomb: {fileID: -2006953966175703154, guid: ca0d78761f4032646b1ce7543c58c24d, type: 3}
   bombSpawnPoint: {fileID: 401077924157163776}
-  timeBetweenBombs: 0.5
+  timeBetweenBombs: 0.25
 --- !u!82 &3163949932145807921
 AudioSource:
   m_ObjectHideFlags: 0

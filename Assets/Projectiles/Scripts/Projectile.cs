@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
     {
     }
 
-    protected void Initialize()
+    protected virtual void Initialize()
     {
         // de-child bullet from shooter so it does not move with shooter
         transform.parent = null;
@@ -68,5 +68,35 @@ public class Projectile : MonoBehaviour
         }
 
         Destroy(gameObject);
+    }
+
+    // got this code from 'duck' on a Unity forum
+    protected void AreaDamageEnemies(Vector3 location, float radius, float damage)
+    {
+        Collider[] objectsInRange = Physics.OverlapSphere(location, radius);
+        foreach (Collider col in objectsInRange)
+        {
+            EnemyHealth enemy = col.GetComponent<EnemyHealth>();
+            PlayerHealth player = col.GetComponent<PlayerHealth>();
+            if (enemy != null)
+            {
+                // linear falloff of effect
+                float proximity = (location - enemy.transform.position).magnitude;
+                float effect = 1 - (proximity / radius);
+
+                enemy.TakeDamage(damage * effect, true);
+            }
+
+            if (player != null)
+            {
+                // linear falloff of effect
+                float proximity = (location - player.transform.position).magnitude;
+                float effect = 1 - (proximity / radius);
+
+                int damageInt = (int)(damage * effect);
+
+                player.TakeDamage(damageInt);
+            }
+        }
     }
 }

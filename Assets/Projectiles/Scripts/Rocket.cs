@@ -33,25 +33,9 @@ public class Rocket : Projectile
         Destroy(gameObject);
     }
 
-    // got this code from 'duck' on a Unity forum
-    void AreaDamageEnemies(Vector3 location, float radius, float damage)
-    {
-        Collider[] objectsInRange = Physics.OverlapSphere(location, radius);
-        foreach (Collider col in objectsInRange)
-        {
-            // TODO: do the same for Player so player can get killed by blast too (easy)
-            EnemyHealth enemy = col.GetComponent<EnemyHealth>();
-            if (enemy != null)
-            {
-                // linear falloff of effect
-                float proximity = (location - enemy.transform.position).magnitude;
-                float effect = 1 - (proximity / radius);
+    
 
-                enemy.TakeDamage(damage * effect, true);
-            }
-        }
-
-    }
+    
 
 
 }

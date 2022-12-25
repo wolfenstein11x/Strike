@@ -77,8 +77,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb19496807b5dc542aa0e77acc8e74bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fallRandomizerMin: 0.1
-  fallRandomizerMax: 1
+  maxLifetime: 0
+  damage: 30
+  impactEffect: {fileID: 5676223786180280405, guid: 80e07bc25956b81438163fe9b644fb4d, type: 3}
+  impactSound: {fileID: 5992595830782909039, guid: 56ea4d067233b15419c312713f385ec3, type: 3}
+  impactEffectLifetime: 0.5
+  impactSoundLifetime: 0.9
+  damageRadius: 15
 --- !u!1 &7832474387697316609
 GameObject:
   m_ObjectHideFlags: 0
