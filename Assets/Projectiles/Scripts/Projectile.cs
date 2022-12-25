@@ -71,13 +71,15 @@ public class Projectile : MonoBehaviour
     }
 
     // got this code from 'duck' on a Unity forum
-    protected void AreaDamageEnemies(Vector3 location, float radius, float damage)
+    protected void AreaDamageEffects(Vector3 location, float radius, float damage)
     {
         Collider[] objectsInRange = Physics.OverlapSphere(location, radius);
         foreach (Collider col in objectsInRange)
         {
             EnemyHealth enemy = col.GetComponent<EnemyHealth>();
             PlayerHealth player = col.GetComponent<PlayerHealth>();
+            NPC npc = col.GetComponent<NPC>();
+
             if (enemy != null)
             {
                 // linear falloff of effect
@@ -97,6 +99,13 @@ public class Projectile : MonoBehaviour
 
                 player.TakeDamage(damageInt);
             }
+
+            if (npc != null)
+            {
+                npc.TriggerScare();
+            }
+
+
         }
     }
 }

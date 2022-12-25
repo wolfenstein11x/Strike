@@ -32,7 +32,7 @@ public class Bomb : Projectile
     {
         PlayImpactEffects();
 
-        AreaDamageEnemies(transform.position, damageRadius, damage);
+        AreaDamageEffects(transform.position, damageRadius, damage);
 
         Destroy(gameObject);
     }
