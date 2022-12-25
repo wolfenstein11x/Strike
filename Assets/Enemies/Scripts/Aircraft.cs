@@ -7,11 +7,17 @@ public class Aircraft : MonoBehaviour
     [SerializeField] float flightSpeed = 5f;
     [SerializeField] FlightPath flightPath;
     [SerializeField] float attackRange = 25f;
+    [SerializeField] Bomb bomb;
+    [SerializeField] Transform bombSpawnPoint;
+    [SerializeField] float timeBetweenBombs = 1f;
 
     Vector3 destination;
     PlayerStatus player;
     AudioSource jetSound;
     bool playedjetSound = false;
+
+    bool allowInvoke = true;
+    bool readyToDropBomb = true;
 
     // Start is called before the first frame update
     void Start()
@@ -39,7 +45,7 @@ public class Aircraft : MonoBehaviour
         if (InAttackRange())
         {
             PlayJetSound();
-            // drop bombs
+            DropBomb();
         }
     }
 
@@ -67,5 +73,20 @@ public class Aircraft : MonoBehaviour
 
         jetSound.Play();
         playedjetSound = true;
+    }
+
+    void DropBomb()
+    {
+        if (!readyToDropBomb) { return; }
+
+        Instantiate(bomb, bombSpawnPoint);
+        readyToDropBomb = false;
+
+        Invoke("ResetBomb", timeBetweenBombs);
+    }
+
+    void ResetBomb()
+    {
+        readyToDropBomb = true;
     }
 }
