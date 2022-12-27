@@ -25,6 +25,19 @@ public class PlayerHealth : MonoBehaviour
         damageCanvas.ActivateRandomBloodSplat();
 
         currentHealth -= damage;
+
+        if (currentHealth < 0) { currentHealth = 0; }
+
+        healthBar.SetHealth(currentHealth);
+    }
+
+    public void Heal(int healAmount)
+    {
+        healthBar.ShowHealAnimation();
+
+        currentHealth += healAmount;
+        if (currentHealth > maxHealth) { currentHealth = maxHealth; }
+
         healthBar.SetHealth(currentHealth);
     }
 }

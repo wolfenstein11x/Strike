@@ -7,6 +7,13 @@ public class HealthBar : MonoBehaviour
 {
     [SerializeField] Slider slider;
 
+    Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
+
     public void SetHealth(int health)
     {
         slider.value = health;
@@ -16,6 +23,11 @@ public class HealthBar : MonoBehaviour
     {
         slider.maxValue = health;
         slider.value = health;
+    }
+
+    public void ShowHealAnimation()
+    {
+        animator.SetTrigger("heal");
     }
 
     
