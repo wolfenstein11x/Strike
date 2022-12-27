@@ -31,6 +31,13 @@ public class ProjectileLauncher : Weapon
 
     protected override void Shoot()
     {
+        // don't shoot if out of ammo
+        if (ammoTracker.GetAmmoCount() <= 0)
+        {
+            outOfAmmoSound.Play();
+            return;
+        }
+
         readyToShoot = false;
 
         // a ray through the middle of the screen

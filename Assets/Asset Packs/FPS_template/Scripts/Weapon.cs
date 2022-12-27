@@ -23,6 +23,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] float zoomedInFOV = 20f;
     [SerializeField] float zoomOutSensitivity = 2f;
     [SerializeField] float zoomInSensitivity = 0.5f;
+    public AudioSource outOfAmmoSound;
 
     bool zoomedInToggle = false;
     RigidbodyFirstPersonController fpsController;
@@ -65,6 +66,13 @@ public class Weapon : MonoBehaviour
 
     protected virtual void Shoot()
     {
+        // don't shoot if out of ammo
+        if (ammoTracker.GetAmmoCount() <= 0)
+        {
+            outOfAmmoSound.Play();
+            return;
+        }
+
         readyToShoot = false;
 
         PlayMuzzleFlash();

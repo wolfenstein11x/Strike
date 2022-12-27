@@ -5,6 +5,7 @@ using UnityEngine;
 public class WeaponSwitching : MonoBehaviour
 {
     [SerializeField] int selectedWeapon = 0;
+    [SerializeField] AudioSource weaponSwitchingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class WeaponSwitching : MonoBehaviour
 
         if (previousSelectedWeapon != selectedWeapon)
         {
+            weaponSwitchingSound.Play();
             SelectWeapon();
         }
     }

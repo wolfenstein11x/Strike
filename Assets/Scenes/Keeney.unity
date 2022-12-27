@@ -4636,10 +4636,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 539351581, guid: 456f71bac96badf45be898e997f90877, type: 3}
-      propertyPath: m_CustomSkybox
-      value: 
-      objectReference: {fileID: 2100000, guid: bdfc475e919710248bf14d75643fefd2, type: 2}
     - target: {fileID: 1119537872, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: healthBar
       value: 

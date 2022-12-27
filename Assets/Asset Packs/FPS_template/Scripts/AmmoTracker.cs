@@ -30,4 +30,9 @@ public class AmmoTracker : MonoBehaviour
     {
         ammoText.text = currentAmmo + "/" + maxAmmo;
     }
+
+    public int GetAmmoCount()
+    {
+        return currentAmmo;
+    }
 }
