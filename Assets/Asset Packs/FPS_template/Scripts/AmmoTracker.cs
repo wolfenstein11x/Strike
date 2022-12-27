@@ -8,6 +8,7 @@ public class AmmoTracker : MonoBehaviour
     [SerializeField] int maxAmmo = 30;
     [SerializeField] GameObject[] magazines;
     [SerializeField] int startingMagazines = 2;
+    [SerializeField] AudioSource reloadSound;
 
     int currentAmmo;
     TextMeshProUGUI ammoText;
@@ -23,6 +24,14 @@ public class AmmoTracker : MonoBehaviour
         SetAmmoDisplay(currentAmmo, maxAmmo);
 
         InitializeMagazines();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload();
+        }
     }
 
     public void DecrementAmmo()
@@ -54,5 +63,20 @@ public class AmmoTracker : MonoBehaviour
         }
 
         magazineIndex = startingMagazines - 1;
+    }
+
+    void Reload()
+    {
+        // magazine index is at -1 when no mags left
+        if (magazineIndex < 0) { return; }
+
+        // play reload sound and update magazine index and GUI
+        reloadSound.Play();
+        magazines[magazineIndex].SetActive(false);
+        magazineIndex--;
+
+        // max ammo and display it on GUI
+        currentAmmo = maxAmmo;
+        SetAmmoDisplay(currentAmmo, maxAmmo);
     }
 }

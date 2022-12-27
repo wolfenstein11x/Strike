@@ -1319,6 +1319,11 @@ Transform:
   m_Father: {fileID: 710179333}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &149863411 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7425048256922149339, guid: 456f71bac96badf45be898e997f90877, type: 3}
+  m_PrefabInstance: {fileID: 539351579}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &151622214
 GameObject:
   m_ObjectHideFlags: 0
@@ -5045,6 +5050,10 @@ PrefabInstance:
       propertyPath: zoomReticle
       value: 
       objectReference: {fileID: 1238548774}
+    - target: {fileID: 6907176325389799253, guid: 456f71bac96badf45be898e997f90877, type: 3}
+      propertyPath: reloadSound
+      value: 
+      objectReference: {fileID: 149863411}
     - target: {fileID: 6907176325389799253, guid: 456f71bac96badf45be898e997f90877, type: 3}
       propertyPath: magazines.Array.size
       value: 4
