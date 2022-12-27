@@ -11,6 +11,7 @@ TagManager:
   - AK47
   - Burger Queen
   - Sniper
+  - pistol
   layers:
   - Default
   - TransparentFX

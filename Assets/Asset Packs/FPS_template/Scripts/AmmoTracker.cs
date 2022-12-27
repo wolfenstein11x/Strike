@@ -19,7 +19,6 @@ public class AmmoTracker : MonoBehaviour
     {
         ammoText = GetComponent<TextMeshProUGUI>();
         
-        // TODO grab currentAmmo from somewhere else
         currentAmmo = maxAmmo;
         SetAmmoDisplay(currentAmmo, maxAmmo);
 
@@ -76,6 +75,20 @@ public class AmmoTracker : MonoBehaviour
         magazineIndex--;
 
         // max ammo and display it on GUI
+        currentAmmo = maxAmmo;
+        SetAmmoDisplay(currentAmmo, maxAmmo);
+    }
+
+    public void CollectAmmo()
+    {
+        // fill all magazine slots
+        while (magazineIndex < magazines.Length-1)
+        {
+            magazineIndex++;
+            magazines[magazineIndex].SetActive(true);
+        }
+
+        // fill ammo
         currentAmmo = maxAmmo;
         SetAmmoDisplay(currentAmmo, maxAmmo);
     }

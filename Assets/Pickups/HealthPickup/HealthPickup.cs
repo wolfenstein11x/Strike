@@ -20,7 +20,7 @@ public class HealthPickup : MonoBehaviour
         {
             playerHealth.Heal(50);
             healSound.Play();
-            Destroy(gameObject, 0.2f);
+            Destroy(gameObject, 0.25f);
         }
     }
 
