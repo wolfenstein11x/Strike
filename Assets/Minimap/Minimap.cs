@@ -5,10 +5,12 @@ using UnityEngine;
 public class Minimap : MonoBehaviour
 {
     PlayerStatus player;
+    Camera minimapCamera;
 
     private void Start()
     {
         player = FindObjectOfType<PlayerStatus>();
+        minimapCamera = GetComponent<Camera>();
     }
     private void LateUpdate()
     {
@@ -19,4 +21,5 @@ public class Minimap : MonoBehaviour
         // if you want the camera to rotate with player too:
         transform.rotation = Quaternion.Euler(90f, player.transform.eulerAngles.y, 0f);
     }
+
 }
