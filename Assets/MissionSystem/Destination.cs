@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Destination : MonoBehaviour
 {
+    [SerializeField] GameObject minimapIcon;
+
     PlayerStatus playerStatus;
 
     // Start is called before the first frame update
@@ -16,6 +18,7 @@ public class Destination : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
+            minimapIcon.SetActive(false);
             playerStatus.RecordArrivedAtPlace(gameObject.tag);
         }
     }

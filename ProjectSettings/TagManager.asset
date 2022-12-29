@@ -9,10 +9,10 @@ TagManager:
   - BigGunner
   - SniperRifle
   - AK47
-  - Burger Queen
   - Sniper
   - pistol
   - Soldier
+  - FloppyBurger
   layers:
   - Default
   - TransparentFX

@@ -17,7 +17,7 @@ public class Mission
     {
         isActive = false;
 
-        Debug.Log("Mission: " + title + " was completed");
+        //Debug.Log("Objective: " + title + " was completed");
 
         if (nextMission != null)
         {

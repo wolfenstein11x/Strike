@@ -42,8 +42,8 @@ public class MissionGiver : MonoBehaviour
         mission.isActive = true;
 
         SetMissionText();
-        Debug.Log("New mission: " + mission.title);
-        Debug.Log(mission.description);
+        //Debug.Log("New mission: " + mission.title);
+        //Debug.Log(mission.description);
 
         activateMissionItems(true);
     }
