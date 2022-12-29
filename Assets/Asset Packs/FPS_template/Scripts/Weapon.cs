@@ -32,14 +32,11 @@ public class Weapon : MonoBehaviour
 
     protected bool readyToShoot;
     protected bool allowInvoke;
+    protected FlagTracker flagTracker;
 
     private void Start()
     {
-        fpsController = GetComponentInParent<RigidbodyFirstPersonController>();
-        meshRenderer = GetComponent<MeshRenderer>();
-        ammoTracker = GetComponentInChildren<AmmoTracker>();
-        readyToShoot = true;
-        allowInvoke = true;
+        Initialize();
     }
 
     protected void Initialize()
@@ -49,6 +46,7 @@ public class Weapon : MonoBehaviour
         ammoTracker = GetComponentInChildren<AmmoTracker>();
         readyToShoot = true;
         allowInvoke = true;
+        flagTracker = FindObjectOfType<FlagTracker>();
     }
 
     void Update()
@@ -66,6 +64,9 @@ public class Weapon : MonoBehaviour
 
     protected virtual void Shoot()
     {
+        // don't shoot if paused
+        if (flagTracker.GamePaused()) { return; }
+
         // don't shoot if out of ammo
         if (ammoTracker.GetAmmoCount() <= 0)
         {

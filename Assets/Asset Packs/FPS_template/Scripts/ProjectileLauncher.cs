@@ -31,6 +31,9 @@ public class ProjectileLauncher : Weapon
 
     protected override void Shoot()
     {
+        // don't shoot if paused
+        if (flagTracker.GamePaused()) { return; }
+
         // don't shoot if out of ammo
         if (ammoTracker.GetAmmoCount() <= 0)
         {
