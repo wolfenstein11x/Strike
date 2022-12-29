@@ -12,6 +12,7 @@ TagManager:
   - Burger Queen
   - Sniper
   - pistol
+  - Soldier
   layers:
   - Default
   - TransparentFX
