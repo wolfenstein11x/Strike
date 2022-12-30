@@ -10575,7 +10575,7 @@ MonoBehaviour:
   missionItems:
   - {fileID: 1596764141}
   - {fileID: 777798823}
-  delayTime: 0.1
+  delayTime: 2
 --- !u!1001 &1210336075
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -7,9 +7,13 @@ public class WeaponSwitching : MonoBehaviour
     [SerializeField] int selectedWeapon = 0;
     [SerializeField] AudioSource weaponSwitchingSound;
 
+    FlagTracker flagTracker;
+
     // Start is called before the first frame update
     void Start()
     {
+        flagTracker = FindObjectOfType<FlagTracker>();
+
         SelectWeapon();
     }
 
@@ -20,6 +24,9 @@ public class WeaponSwitching : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") > 0f)
         {
+            // ignore input if currently zoomed in
+            if (flagTracker.ZoomedIn()) { return; }
+
             if (selectedWeapon >= transform.childCount - 1) { selectedWeapon = 0; }
 
             else { selectedWeapon++; }
@@ -27,6 +34,9 @@ public class WeaponSwitching : MonoBehaviour
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
         {
+            // ignore input if currently zoomed in
+            if (flagTracker.ZoomedIn()) { return; }
+
             if (selectedWeapon <= 0) { selectedWeapon = transform.childCount - 1; }
 
             else { selectedWeapon--; }

@@ -185,6 +185,9 @@ public class Weapon : MonoBehaviour
             ShowWeapon(false);
             reticle.SetActive(false);
             zoomReticle.SetActive(true);
+
+            // set zoom flag so you can't switch weapons while zoomed
+            flagTracker.SetZoomedIn(true);
         }
 
         else
@@ -196,6 +199,9 @@ public class Weapon : MonoBehaviour
             ShowWeapon(true);
             zoomReticle.SetActive(false);
             reticle.SetActive(true);
+
+            // reset zoom flag so you can switch weapons
+            flagTracker.SetZoomedIn(false);
         }
     }
 

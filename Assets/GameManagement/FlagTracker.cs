@@ -6,6 +6,7 @@ public class FlagTracker : MonoBehaviour
 {
     bool gamePaused;
     bool playerDead;
+    bool zoomedIn;
 
     public void SetGamePaused(bool status)
     {
@@ -25,5 +26,15 @@ public class FlagTracker : MonoBehaviour
     public bool PlayerDead()
     {
         return playerDead;
+    }
+
+    public void SetZoomedIn(bool status)
+    {
+        zoomedIn = status;
+    }
+
+    public bool ZoomedIn()
+    {
+        return zoomedIn;
     }
 }
