@@ -5,6 +5,7 @@ using UnityEngine;
 public class FlagTracker : MonoBehaviour
 {
     bool gamePaused;
+    bool playerDead;
 
     public void SetGamePaused(bool status)
     {
@@ -14,5 +15,15 @@ public class FlagTracker : MonoBehaviour
     public bool GamePaused()
     {
         return gamePaused;
+    }
+
+    public void SetPlayerDead(bool status)
+    {
+        playerDead = true;
+    }
+
+    public bool PlayerDead()
+    {
+        return playerDead;
     }
 }
