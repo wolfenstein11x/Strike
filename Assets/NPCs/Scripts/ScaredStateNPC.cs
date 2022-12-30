@@ -10,16 +10,23 @@ public class ScaredStateNPC : StateMachineBehaviour
     {
         npc = animator.GetComponent<NPC>();
         npc.Halt();
+        npc.isScared = true;
     }
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        
+        if (npc.RecoveredFromScare())
+        {
+            npc.isScared = false;
+            animator.SetTrigger("resumeWalking");
+        }
     }
 
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
+        npc.UnHalt();
         animator.ResetTrigger("scared");
+        animator.ResetTrigger("resumeWalking");
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

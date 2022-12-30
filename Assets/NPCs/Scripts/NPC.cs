@@ -9,13 +9,17 @@ public class NPC : MonoBehaviour
     [SerializeField] float waypointTolerance = 1f;
     [SerializeField] float waypointDwellTimeMin = 3f;
     [SerializeField] float walkSpeed = 2.5f;
+    [SerializeField] float scareRecoveryTime = 7f;
+    public bool isScared = false;
+
 
     NavMeshAgent navMeshAgent;
     Animator animator;
 
     int currentWaypointIndex = 0;
     float timeSinceArrivedAtWaypoint = Mathf.Infinity;
-    float waypointDwellTime; 
+    float waypointDwellTime;
+    float timeSinceLastScare = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,12 +32,29 @@ public class NPC : MonoBehaviour
         navMeshAgent.speed = walkSpeed;
         waypointDwellTime = waypointDwellTimeMin;
 
+        // randomize scare recovery time
+        scareRecoveryTime *= Random.Range(1.1f, 1.5f);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (isScared)
+        {
+            timeSinceLastScare += Time.deltaTime;
+            //Debug.Log("scared time: " + timeSinceLastScare);
+        }
+    }
+
+    public void ResetScareTime()
+    {
+        timeSinceLastScare = 0;
+    }
+
+    public bool RecoveredFromScare()
+    {
+        return (timeSinceLastScare >= scareRecoveryTime);
     }
 
     public void Halt()
@@ -136,6 +157,16 @@ public class NPC : MonoBehaviour
 
     public void TriggerScare()
     {
-        animator.SetTrigger("scared");
+        if (isScared)
+        {
+            ResetScareTime();
+            return;
+        }
+
+        else
+        {
+            ResetScareTime();
+            animator.SetTrigger("scared");
+        }
     }
 }
