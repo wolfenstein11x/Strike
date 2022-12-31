@@ -49,6 +49,7 @@ public class ProjectileLauncher : Weapon
 
         PlayMuzzleFlash();
         gunSound.Play();
+        CreateNoiseProvocationSphere(noiseRadius);
 
         // generate spread vector
         float xSpread = Random.Range(-spread, spread);

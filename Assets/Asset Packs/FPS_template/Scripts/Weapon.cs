@@ -81,7 +81,7 @@ public class Weapon : MonoBehaviour
 
         PlayMuzzleFlash();
         gunSound.Play();
-        //CreateNoiseProvocationSphere(noiseRadius);
+        CreateNoiseProvocationSphere(noiseRadius);
         ProcessRaycast();
         ammoTracker.DecrementAmmo();
 
@@ -151,7 +151,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private void CreateNoiseProvocationSphere(float radius)
+    protected void CreateNoiseProvocationSphere(float radius)
     {
         Collider[] objectsInRange = Physics.OverlapSphere(transform.position, radius);
         foreach (Collider col in objectsInRange)
