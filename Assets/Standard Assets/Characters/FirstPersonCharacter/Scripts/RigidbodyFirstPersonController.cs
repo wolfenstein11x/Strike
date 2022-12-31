@@ -186,7 +186,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Jump = false;
         }
 
-
+        
         private float SlopeMultiplier()
         {
             float angle = Vector3.Angle(m_GroundContactNormal, Vector3.up);

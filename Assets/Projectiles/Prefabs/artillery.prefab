@@ -82,7 +82,7 @@ MonoBehaviour:
   impactSound: {fileID: 6255571969230826743, guid: c06ea9fdf503837408a255a97b1e4f2c, type: 3}
   impactEffectLifetime: 0.5
   impactSoundLifetime: 1.75
-  damageRadius: 1
+  damageRadius: 10
 --- !u!1001 &997937920474260081
 PrefabInstance:
   m_ObjectHideFlags: 0

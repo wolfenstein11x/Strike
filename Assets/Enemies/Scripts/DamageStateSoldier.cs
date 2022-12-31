@@ -27,6 +27,9 @@ public class DamageStateSoldier : StateMachineBehaviour
         {
             soldier.UnHalt();
         }
+
+        // go back to shooting at player if in range, otherwise go back to chasing player
+
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
