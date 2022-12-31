@@ -20,7 +20,6 @@ public class AttackStateFireSoldier : StateMachineBehaviour
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         fireSoldier.FaceTarget();
-
         if (!fireSoldier.InFiringRange())
         {
             animator.SetTrigger("chase");

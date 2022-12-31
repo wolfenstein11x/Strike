@@ -14626,15 +14626,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2843640155777171160, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 878.7156
+      value: 887.5
       objectReference: {fileID: 0}
     - target: {fileID: 2843640155777171160, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.000019073486
+      value: 1.262
       objectReference: {fileID: 0}
     - target: {fileID: 2843640155777171160, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 857.12195
+      value: 895.76
       objectReference: {fileID: 0}
     - target: {fileID: 2843640155777171160, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: m_LocalRotation.w
@@ -14664,34 +14664,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2843640155777416488, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2843640155777455748, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2843640155777458724, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2843640155777462520, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
       propertyPath: m_Name
       value: FireSoldier
       objectReference: {fileID: 0}
-    - target: {fileID: 2843640155777462520, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2843640155790971114, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b599c004b71afff4d9318c349bbb7d53, type: 2}
     - target: {fileID: 4396566741101950032, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
-      propertyPath: patrolPath
-      value: 
-      objectReference: {fileID: 258121293}
+      propertyPath: maxWeaponDamage
+      value: 30
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5139ce4d1ef6a3542b14fbbe12359544, type: 3}
 --- !u!1 &1686065703
@@ -19223,7 +19203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7897768861205057020, guid: f4957f6e4d33958468905af5bfa2a035, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9045913305630391805, guid: f4957f6e4d33958468905af5bfa2a035, type: 3}
       propertyPath: patrolPath
