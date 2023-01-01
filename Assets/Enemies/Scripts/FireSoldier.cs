@@ -32,6 +32,11 @@ public class FireSoldier : Soldier
         fireEffect.SetActive(status);
     }
 
+    public bool FlameThrowerActive()
+    {
+        return (fireEffect.activeSelf);
+    }
+
     public void PlayFlamethrowerSound()
     {
         gunSound.Play();
@@ -55,7 +60,7 @@ public class FireSoldier : Soldier
 
     public void DealDamage()
     {
-        Vector3 startPoint = projectileSpawnPoint.position;
+        Vector3 startPoint = fireEffect.transform.position;
         Vector3 endPoint = player.transform.position;
 
         Vector3 dir = (endPoint - startPoint).normalized;

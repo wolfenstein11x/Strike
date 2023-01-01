@@ -2,36 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AttackStateFireSoldier : StateMachineBehaviour
+public class DamageStateFireSoldier : StateMachineBehaviour
 {
     FireSoldier fireSoldier;
-
-    // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
         fireSoldier = animator.GetComponent<FireSoldier>();
         fireSoldier.Halt();
-        fireSoldier.ToggleFlamethrower(true);
-
-        fireSoldier.CreateNoiseProvocationSphere(fireSoldier.noiseRange);
     }
 
-    // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        fireSoldier.FaceTarget();
-        if (!fireSoldier.InFiringRange())
-        {
-            fireSoldier.ToggleFlamethrower(false);
-            animator.SetTrigger("chase");
-        }
+
     }
 
-    // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        fireSoldier.UnHalt();
-        animator.ResetTrigger("attack");
+        // only re-enable movement if soldier is still alive (prevent corpses from following player)
+        if (!fireSoldier.GetComponent<EnemyHealth>().IsDead())
+        {
+            fireSoldier.UnHalt();
+        }
+
+        // if soldier is dead, turn off flame thrower
+        else
+        {
+            fireSoldier.ToggleFlamethrower(false);
+        }
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()
