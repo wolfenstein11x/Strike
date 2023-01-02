@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1729496926073980164}
   m_Layer: 0
   m_Name: RadioSoldier
-  m_TagString: Soldier
+  m_TagString: RadioSoldier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

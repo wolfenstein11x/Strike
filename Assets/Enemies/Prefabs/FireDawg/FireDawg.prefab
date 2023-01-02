@@ -1083,7 +1083,7 @@ GameObject:
   - component: {fileID: 1626847516320287163}
   m_Layer: 0
   m_Name: FireDawg
-  m_TagString: Soldier
+  m_TagString: FireDawg
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1223,6 +1223,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2.5
   angleRange: 0
+  mapIcon: {fileID: 2948992472396126894}
   spread: 0
   fireRange: 15
   noiseRange: 30
@@ -3481,6 +3482,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
+--- !u!1 &2948992472396126894 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2879787194558542987, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
+  m_PrefabInstance: {fileID: 1088712453847100965}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5350075497816755117 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4982295536497993096, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
