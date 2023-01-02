@@ -24,5 +24,7 @@ public class Destination : MonoBehaviour
             minimapIcon.SetActive(false);
             playerStatus.RecordArrivedAtPlace(gameObject.tag);
         }
+
+        gameObject.SetActive(false);
     }
 }

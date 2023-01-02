@@ -2875,7 +2875,7 @@ MonoBehaviour:
   fireRange: 100
   noiseRange: 30
   chaseRange: 1
-  weaponDamage: 25
+  weaponDamage: 15
 --- !u!114 &506371525
 MonoBehaviour:
   m_ObjectHideFlags: 0
