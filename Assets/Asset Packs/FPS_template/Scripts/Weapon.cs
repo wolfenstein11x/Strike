@@ -13,6 +13,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] ParticleSystem zoomedMuzzleFlash;
     public AudioSource gunSound;
+    [SerializeField] bool automatic = false;
     [SerializeField] GameObject hitEffect;
     [SerializeField] float provocationRadius = 10f;
     [SerializeField] GameObject reticle;
@@ -51,6 +52,19 @@ public class Weapon : MonoBehaviour
 
     void Update()
     {
+        if (automatic)
+        {
+            HandleInputAuto();
+        }
+
+        else
+        {
+            HandleInputSemi();
+        }
+    }
+
+    void HandleInputSemi()
+    {
         if (Input.GetButtonDown("Fire1") && readyToShoot)
         {
             Shoot();
@@ -59,6 +73,26 @@ public class Weapon : MonoBehaviour
         else if (Input.GetMouseButtonDown(1))
         {
             ToggleZoom();
+        }
+    }
+
+    void HandleInputAuto()
+    {
+        // must have ammo to prevent out-of-ammo sound from playing every frame when out of ammo
+        if (Input.GetButton("Fire1") && readyToShoot && ammoTracker.GetAmmoCount() > 0)
+        {
+            Shoot();
+        }
+
+        else if (Input.GetMouseButtonDown(1))
+        {
+            ToggleZoom();
+        }
+
+        // if out of ammo, play out-of-ammo sound once per button press
+        else if (Input.GetButtonDown("Fire1") && ammoTracker.GetAmmoCount() <= 0)
+        {
+            Shoot();
         }
     }
 

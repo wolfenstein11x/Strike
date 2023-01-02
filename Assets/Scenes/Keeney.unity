@@ -14904,10 +14904,11 @@ MonoBehaviour:
   range: 30
   noiseRadius: 10
   damage: 15
-  timeBetweenShots: 1
+  timeBetweenShots: 0.1
   muzzleFlash: {fileID: 153503188}
   zoomedMuzzleFlash: {fileID: 0}
   gunSound: {fileID: 544719338}
+  automatic: 1
   hitEffect: {fileID: 8427441504170647115, guid: fec5e7414d221af4f816b6bda4fb6018, type: 3}
   provocationRadius: 10
   reticle: {fileID: 884582221}
