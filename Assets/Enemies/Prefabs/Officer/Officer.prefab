@@ -1639,6 +1639,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2.5
   angleRange: 10
+  mapIcon: {fileID: 5331121424080453088}
   spread: 0.5
   fireRange: 25
   noiseRange: 30
@@ -3616,5 +3617,10 @@ PrefabInstance:
 --- !u!224 &3109831089251773667 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4982295536497993096, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
+  m_PrefabInstance: {fileID: 7929991780973103467}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5331121424080453088 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2879787194558542987, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
   m_PrefabInstance: {fileID: 7929991780973103467}
   m_PrefabAsset: {fileID: 0}

@@ -7,12 +7,13 @@ public class Aircraft : MonoBehaviour
     [SerializeField] float flightSpeed = 5f;
     [SerializeField] FlightPath flightPath;
     [SerializeField] float attackRange = 25f;
+    [SerializeField] Transform target;
     [SerializeField] Bomb bomb;
     [SerializeField] Transform bombSpawnPoint;
     [SerializeField] float timeBetweenBombs = 1f;
+    public bool airStrikeCalled = false;
     
     Vector3 destination;
-    PlayerStatus player;
     AudioSource jetSound;
     bool playedjetSound = false;
 
@@ -21,11 +22,7 @@ public class Aircraft : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.position = flightPath.GetWaypoint(0);
-
-        destination = GetDestination();
-
-        player = FindObjectOfType<PlayerStatus>();
+        ResetPositions();
 
         jetSound = GetComponent<AudioSource>();
     }
@@ -33,12 +30,11 @@ public class Aircraft : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var step = flightSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        Fly();
 
         if (ReachedDestination())
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
         }
 
         if (InAttackRange())
@@ -46,6 +42,28 @@ public class Aircraft : MonoBehaviour
             PlayJetSound();
             DropBomb();
         }
+    }
+
+
+    void Fly()
+    {
+        if (airStrikeCalled)
+        {
+            var step = flightSpeed * Time.deltaTime;
+            transform.position = Vector3.MoveTowards(transform.position, destination, step);
+        }
+    }
+
+    private void OnEnable()
+    {
+        playedjetSound = false;
+        ResetPositions();
+    }
+
+    void ResetPositions()
+    {
+        transform.position = flightPath.GetWaypoint(0);
+        destination = GetDestination();
     }
 
     private Vector3 GetDestination()
@@ -61,9 +79,9 @@ public class Aircraft : MonoBehaviour
     bool InAttackRange()
     {
         float xPos = transform.position.x;
-        float xPosPlayer = player.transform.position.x;
+        float xPosTarget = target.position.x;
 
-        return (Mathf.Abs(xPosPlayer - xPos) <= attackRange);
+        return (Mathf.Abs(xPosTarget - xPos) <= attackRange);
     }
 
     void PlayJetSound()

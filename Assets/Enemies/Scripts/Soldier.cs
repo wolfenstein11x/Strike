@@ -16,6 +16,7 @@ public class Soldier : MonoBehaviour
     [SerializeField] float runSpeed = 5f;
     [SerializeField] float walkSpeed = 2.5f;
     [SerializeField] float angleRange = 10f;
+    [SerializeField] GameObject mapIcon;
     public float spread = 3f;
 
     public float fireRange = 10f;
@@ -53,6 +54,11 @@ public class Soldier : MonoBehaviour
         shootableLayer = LayerMask.NameToLayer("Player");
 
         navMeshAgent.speed = walkSpeed;
+    }
+
+    public void DeactivateMapIcon()
+    {
+        mapIcon.SetActive(false);
     }
 
 

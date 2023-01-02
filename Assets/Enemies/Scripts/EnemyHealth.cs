@@ -46,6 +46,7 @@ public class EnemyHealth : MonoBehaviour
         isDead = true;
         player.RecordKill(gameObject.tag);
         soldier.Halt();
+        soldier.DeactivateMapIcon();
 
         if (explosionDeath)
         {

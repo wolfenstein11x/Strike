@@ -71,7 +71,7 @@ public class Projectile : MonoBehaviour
     }
 
     // got this code from 'duck' on a Unity forum
-    protected void AreaDamageEffects(Vector3 location, float radius, float damage)
+    protected virtual void AreaDamageEffects(Vector3 location, float radius, float damage)
     {
         Collider[] objectsInRange = Physics.OverlapSphere(location, radius);
         foreach (Collider col in objectsInRange)
