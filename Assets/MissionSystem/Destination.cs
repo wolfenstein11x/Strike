@@ -12,7 +12,10 @@ public class Destination : MonoBehaviour
     void Start()
     {
         playerStatus = FindObjectOfType<PlayerStatus>();
+        minimapIcon.SetActive(true);
     }
+
+    
 
     private void OnTriggerEnter(Collider other)
     {
