@@ -24,7 +24,7 @@ public class Soldier : MonoBehaviour
     public float chaseRange = 25f;
 
     protected NavMeshAgent navMeshAgent;
-    Animator animator;
+    protected Animator animator;
     protected Transform player;
     protected Vector3 midsectionOffset = new Vector3(0f, 1.5f, 0f);
     protected LayerMask shootableLayers;

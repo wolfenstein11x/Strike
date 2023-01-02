@@ -148,22 +148,21 @@ MonoBehaviour:
   patrolPath: {fileID: 0}
   waypointTolerance: 1
   waypointDwellTime: 3
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 7614789098829478585}
   gunSound: {fileID: 8898095236510651185}
   projectile: {fileID: 3544215196483897492, guid: 1c3907361fc9b73478c55c05f7693b79, type: 3}
   projectileSpawnPoint: {fileID: 8898095236540621851}
-  shootForce: 5
+  shootForce: 50
   runSpeed: 5
   walkSpeed: 2.5
   angleRange: 10
   mapIcon: {fileID: 577776384200507165}
-  spread: 3
+  spread: 0.5
   fireRange: 10
   noiseRange: 30
   chaseRange: 25
-  airStrike: {fileID: 0}
-  timeBetweenStrikesMin: 10
-  timeBetweenStrikesMax: 20
+  timeBetweenStrikesMin: 15
+  timeBetweenStrikesMax: 25
   airStrikeDuration: 10
 --- !u!1 &7741523584753340654
 GameObject:
@@ -3315,6 +3314,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a008d7039d3fec44891697b8d1d57e3, type: 3}
+--- !u!198 &7614789098829478585 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 7636684846503342667, guid: 9a008d7039d3fec44891697b8d1d57e3, type: 3}
+  m_PrefabInstance: {fileID: 24732685579569394}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7745928853461020733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7721649708710623439, guid: 9a008d7039d3fec44891697b8d1d57e3, type: 3}

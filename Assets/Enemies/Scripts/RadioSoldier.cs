@@ -9,6 +9,7 @@ public class RadioSoldier : Soldier
     [SerializeField] float airStrikeDuration = 10f;
 
     Aircraft[] bombers;
+    EnemyHealth health;
 
     float timer;
     float nextStrikeTime;
@@ -16,14 +17,21 @@ public class RadioSoldier : Soldier
     // Start is called before the first frame update
     void Start()
     {
+        Initialize();
+        health = GetComponent<EnemyHealth>();
+
         bombers = FindObjectsOfType<Aircraft>();
         SetBombers(false);
         ResetAirStrikeTimer();
+
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (health.IsDead()) { return; }
+
         if (timer >= nextStrikeTime)
         {
             CallAirStrike();
@@ -37,7 +45,7 @@ public class RadioSoldier : Soldier
 
     void CallAirStrike()
     {
-        Debug.Log("strike incoming!");
+        //Debug.Log("strike incoming!");
         SetBombers(false);
         SetBombers(true);
         ResetAirStrikeTimer();
