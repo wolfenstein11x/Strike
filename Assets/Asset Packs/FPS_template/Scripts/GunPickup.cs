@@ -6,6 +6,7 @@ public class GunPickup : MonoBehaviour
 {
     [SerializeField] AudioSource pickupSound;
     [SerializeField] GameObject playerGun;
+    [SerializeField] GameObject mapIcon;
 
     PlayerStatus player;
 
@@ -13,6 +14,11 @@ public class GunPickup : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerStatus>();
+
+        if (mapIcon != null)
+        {
+            mapIcon.SetActive(true);
+        }
     }
 
     // Update is called once per frame
@@ -29,6 +35,7 @@ public class GunPickup : MonoBehaviour
             player.RecordItemCollected(gameObject.tag);
             //playerGun.SetActive(true);
             GetComponentInChildren<MeshRenderer>().enabled = false;
+            mapIcon.SetActive(false);
             Destroy(gameObject, 0.5f);
         }
     }

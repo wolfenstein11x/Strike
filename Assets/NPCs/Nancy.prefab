@@ -1256,6 +1256,8 @@ MonoBehaviour:
   waypointTolerance: 4
   waypointDwellTimeMin: 3
   walkSpeed: 2
+  scareRecoveryTime: 4
+  isScared: 0
 --- !u!195 &6680337087781774622
 NavMeshAgent:
   m_ObjectHideFlags: 0
