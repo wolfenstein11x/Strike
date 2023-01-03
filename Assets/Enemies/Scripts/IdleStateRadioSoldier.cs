@@ -13,7 +13,7 @@ public class IdleStateRadioSoldier : StateMachineBehaviour
 
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (radioSoldier.IsProvoked())
+        if (radioSoldier.GetComponent<EnemyHealth>().TakenDamage())
         {
             animator.SetTrigger("getUp");
         }

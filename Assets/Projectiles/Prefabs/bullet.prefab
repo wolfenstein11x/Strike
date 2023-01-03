@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 5
-  damage: 5
+  damage: 3
   impactEffect: {fileID: 0}
   impactSound: {fileID: 0}
   impactEffectLifetime: 0.5

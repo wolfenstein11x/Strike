@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 3
-  damage: 15
+  damage: 10
   impactEffect: {fileID: 5676223786180280405, guid: 80e07bc25956b81438163fe9b644fb4d, type: 3}
   impactSound: {fileID: 6255571969230826743, guid: c06ea9fdf503837408a255a97b1e4f2c, type: 3}
   impactEffectLifetime: 0.5

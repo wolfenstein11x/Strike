@@ -41,6 +41,12 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    // TakenDamage is a temporary hack, will revise/remove
+    public bool TakenDamage()
+    {
+        return hitPoints < 100f;
+    }
+
     public void Die(bool explosionDeath=false)
     {
         isDead = true;

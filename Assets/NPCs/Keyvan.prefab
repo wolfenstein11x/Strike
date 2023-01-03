@@ -1938,8 +1938,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolPath: {fileID: 0}
   waypointTolerance: 4
-  waypointDwellTimeMin: 3
+  waypointDwellTimeMin: 30
   walkSpeed: 2
+  scareRecoveryTime: 4
+  isScared: 0
 --- !u!195 &1703685791135097424
 NavMeshAgent:
   m_ObjectHideFlags: 0
