@@ -77,12 +77,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifetime: 10
-  damage: 300
+  damage: 200
   impactEffect: {fileID: 5676223786180280405, guid: 80e07bc25956b81438163fe9b644fb4d, type: 3}
   impactSound: {fileID: 6255571969230826743, guid: c06ea9fdf503837408a255a97b1e4f2c, type: 3}
   impactEffectLifetime: 0.5
   impactSoundLifetime: 1.75
-  damageRadius: 15
+  damageRadius: 10
 --- !u!1001 &5533568530869245867
 PrefabInstance:
   m_ObjectHideFlags: 0
