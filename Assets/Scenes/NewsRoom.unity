@@ -191,6 +191,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &607375844
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 607375846}
+  - component: {fileID: 607375845}
+  m_Layer: 0
+  m_Name: OneLiner (5)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &607375845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607375844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb51172a3552d84f8fb8ef44dce86dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneLinerText: {fileID: 1046202815}
+  line: Surrender now, or we will all watch you burn!
+  lettersPerSecond: 40
+--- !u!4 &607375846
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 607375844}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &787623553
 GameObject:
   m_ObjectHideFlags: 0
@@ -506,8 +553,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Amazon workers are going on strike all across the country, demainding longer
-    bathroom breaks
+  m_text: Sources say that an unidentified terrorist is leading the workers in a
+    violent revolt..
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -584,6 +631,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046202813}
   m_CullTransparentMesh: 1
+--- !u!1 &1081598718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1081598720}
+  - component: {fileID: 1081598719}
+  m_Layer: 0
+  m_Name: OneLiner (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1081598719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081598718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb51172a3552d84f8fb8ef44dce86dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  oneLinerText: {fileID: 1046202815}
+  line: Well I have a message for this terrorist...
+  lettersPerSecond: 40
+--- !u!4 &1081598720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1081598718}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157625762
 GameObject:
   m_ObjectHideFlags: 0
@@ -614,8 +708,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oneLinerText: {fileID: 1046202815}
-  line: Amazon workers are going on strike all across the country, demanding longer
-    bathroom breaks...
+  line: Entitled workers are going on strike all across the country...
   lettersPerSecond: 40
 --- !u!4 &1157625764
 Transform:
@@ -738,7 +831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oneLinerText: {fileID: 1046202815}
-  line: Workers today are so entitled! It makes me sick to my stomach!
+  line: Blackwater has sent in troops to get the workers in line...
   lettersPerSecond: 40
 --- !u!4 &1424777840
 Transform:
@@ -879,7 +972,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!320 &1554248563
 PlayableDirector:
@@ -904,6 +997,10 @@ PlayableDirector:
     value: {fileID: 1424777838}
   - key: {fileID: -2485618005959989118, guid: 70e346884abf610498c91a71d1c280e1, type: 2}
     value: {fileID: 2132386332}
+  - key: {fileID: -2663873372330740958, guid: 70e346884abf610498c91a71d1c280e1, type: 2}
+    value: {fileID: 1081598718}
+  - key: {fileID: -2816705916533058783, guid: 70e346884abf610498c91a71d1c280e1, type: 2}
+    value: {fileID: 607375844}
   m_ExposedReferences:
     m_References: []
 --- !u!1 &1783425478
@@ -1040,7 +1137,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   oneLinerText: {fileID: 1046202815}
-  line: My generation would hold our pee until the boss said we could go!
+  line: Sources say that an unidentified terrorist is leading the workers in a violent
+    revolt...
   lettersPerSecond: 40
 --- !u!4 &2132386334
 Transform:

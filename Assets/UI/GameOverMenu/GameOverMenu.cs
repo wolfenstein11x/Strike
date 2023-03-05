@@ -16,6 +16,7 @@ public class GameOverMenu : MonoBehaviour
 
     public void PlayAgainButton()
     {
+        clickSound.Play();
         SceneManager.LoadScene(activeSceneIdx);
     }
 
