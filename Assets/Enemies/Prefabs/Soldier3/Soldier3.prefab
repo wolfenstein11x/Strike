@@ -3308,6 +3308,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: grenadeLauncherSound
       objectReference: {fileID: 0}
+    - target: {fileID: 8768375181402408937, guid: 08c041ef403df66468a51b3dbe8066e5, type: 3}
+      propertyPath: m_Volume
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08c041ef403df66468a51b3dbe8066e5, type: 3}
 --- !u!4 &1494025195549032305 stripped

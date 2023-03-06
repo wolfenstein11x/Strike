@@ -42159,11 +42159,11 @@ GameObject:
   - component: {fileID: 8656584190679673188}
   m_Layer: 0
   m_Name: SawGunner
-  m_TagString: Soldier
+  m_TagString: BigBubba
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7507876212212923471
 Transform:
   m_ObjectHideFlags: 0
@@ -42273,6 +42273,7 @@ MonoBehaviour:
   runSpeed: 5
   walkSpeed: 2.5
   angleRange: 10
+  mapIcon: {fileID: 1883444591968354901}
   spread: 0.5
   fireRange: 25
   noiseRange: 30
@@ -42498,6 +42499,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
+--- !u!1 &1883444591968354901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2879787194558542987, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
+  m_PrefabInstance: {fileID: 4455284692975285982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &8714732142879101782 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4982295536497993096, guid: 5b5782d3161d98941b54bf55d0efd193, type: 3}
@@ -42532,19 +42538,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffa9e06975e572e4fa0f7a787ff53157, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffa9e06975e572e4fa0f7a787ff53157, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.70710677
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffa9e06975e572e4fa0f7a787ff53157, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.000000084293696
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffa9e06975e572e4fa0f7a787ff53157, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000022476454
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ffa9e06975e572e4fa0f7a787ff53157, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
