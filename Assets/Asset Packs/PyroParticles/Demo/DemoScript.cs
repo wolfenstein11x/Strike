@@ -5,6 +5,7 @@ namespace DigitalRuby.PyroParticles
 {
     public class DemoScript : MonoBehaviour
     {
+        /*
         public GameObject[] Prefabs;
         public Light Sun;
         public Camera SideCamera;
@@ -244,5 +245,7 @@ namespace DigitalRuby.PyroParticles
         {
             UpdateUI();
         }
+    */
     }
+        
 }
