@@ -6,6 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class Weapon : MonoBehaviour
 {
     public Camera fpsCamera;
+    public bool obtained;
     public float range = 100f;
     public float noiseRadius = 10f;
     [SerializeField] float damage = 30f;

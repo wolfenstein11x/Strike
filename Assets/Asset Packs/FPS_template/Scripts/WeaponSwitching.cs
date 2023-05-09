@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponSwitching : MonoBehaviour
 {
+    [SerializeField] Weapon[] weapons;
     [SerializeField] int selectedWeapon = 0;
     [SerializeField] AudioSource weaponSwitchingSound;
 
@@ -13,7 +14,7 @@ public class WeaponSwitching : MonoBehaviour
     void Start()
     {
         flagTracker = FindObjectOfType<FlagTracker>();
-
+        
         SelectWeapon();
     }
 
@@ -27,9 +28,7 @@ public class WeaponSwitching : MonoBehaviour
             // ignore input if currently zoomed in
             if (flagTracker.ZoomedIn()) { return; }
 
-            if (selectedWeapon >= transform.childCount - 1) { selectedWeapon = 0; }
-
-            else { selectedWeapon++; }
+            selectedWeapon = IncrementWeapon(selectedWeapon);
         }
 
         if (Input.GetAxis("Mouse ScrollWheel") < 0f)
@@ -37,9 +36,7 @@ public class WeaponSwitching : MonoBehaviour
             // ignore input if currently zoomed in
             if (flagTracker.ZoomedIn()) { return; }
 
-            if (selectedWeapon <= 0) { selectedWeapon = transform.childCount - 1; }
-
-            else { selectedWeapon--; }
+            selectedWeapon = DecrementWeapon(selectedWeapon);
         }
 
         if (previousSelectedWeapon != selectedWeapon)
@@ -47,6 +44,44 @@ public class WeaponSwitching : MonoBehaviour
             weaponSwitchingSound.Play();
             SelectWeapon();
         }
+    }
+
+    private int IncrementWeapon(int selectedWeaponIn)
+    {
+        bool validSelection = false;
+        int selectedWeaponOut = 0;
+
+        while (!validSelection)
+        {
+            if (selectedWeaponIn >= transform.childCount - 1) { selectedWeaponIn = 0; }
+
+            else { selectedWeaponIn++; }
+
+            bool selectedWeaponObtained = weapons[selectedWeaponIn].obtained;
+            validSelection = selectedWeaponObtained;
+        }
+
+        selectedWeaponOut = selectedWeaponIn;
+        return selectedWeaponOut;
+    }
+
+    private int DecrementWeapon(int selectedWeaponIn)
+    {
+        bool validSelection = false;
+        int selectedWeaponOut = 0;
+
+        while (!validSelection)
+        {
+            if (selectedWeaponIn <= 0) { selectedWeaponIn = transform.childCount - 1; }
+
+            else { selectedWeaponIn--; }
+
+            bool selectedWeaponObtained = weapons[selectedWeaponIn].obtained;
+            validSelection = selectedWeaponObtained;
+        }
+
+        selectedWeaponOut = selectedWeaponIn;
+        return selectedWeaponOut;
     }
 
     private void SelectWeapon()
