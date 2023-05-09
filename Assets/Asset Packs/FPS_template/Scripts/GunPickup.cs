@@ -5,7 +5,7 @@ using UnityEngine;
 public class GunPickup : MonoBehaviour
 {
     [SerializeField] AudioSource pickupSound;
-    [SerializeField] GameObject playerGun;
+    [SerializeField] Weapon playerGun;
     [SerializeField] GameObject mapIcon;
 
     PlayerStatus player;
@@ -33,7 +33,7 @@ public class GunPickup : MonoBehaviour
         {
             pickupSound.Play();
             player.RecordItemCollected(gameObject.tag);
-            //playerGun.SetActive(true);
+            playerGun.obtained = true;
             GetComponentInChildren<MeshRenderer>().enabled = false;
             mapIcon.SetActive(false);
             Destroy(gameObject, 0.5f);

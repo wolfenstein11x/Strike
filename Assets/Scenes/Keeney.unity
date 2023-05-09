@@ -49359,6 +49359,10 @@ PrefabInstance:
       propertyPath: mapIcon
       value: 
       objectReference: {fileID: 414495099}
+    - target: {fileID: 8266119603645972286, guid: dbe56adae3393f245ac691aa5de84496, type: 3}
+      propertyPath: playerGun
+      value: 
+      objectReference: {fileID: 1654383258}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dbe56adae3393f245ac691aa5de84496, type: 3}
 --- !u!4 &8501778224717755739 stripped

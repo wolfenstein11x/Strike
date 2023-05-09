@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupSound: {fileID: 6491771332424653053}
   playerGun: {fileID: 0}
+  mapIcon: {fileID: 0}
 --- !u!65 &1464547799
 BoxCollider:
   m_ObjectHideFlags: 0
