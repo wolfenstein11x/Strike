@@ -6,6 +6,7 @@ using UnityEngine;
 public class Mission 
 {
     [SerializeField] MissionGiver nextMission;
+    [SerializeField] GameObject postMissionDialogue;
 
     public bool isActive;
     public string title;
@@ -21,6 +22,7 @@ public class Mission
 
         if (nextMission != null)
         {
+            PlayDialogue();
             nextMission.GiveMission();
         }
 
@@ -28,5 +30,18 @@ public class Mission
         {
             Debug.Log("you win keeyud");
         }
+    }
+
+    private void PlayDialogue()
+    {
+        if (postMissionDialogue != null)
+        {
+            postMissionDialogue.SetActive(true);
+        }
+    }
+
+    private void EndDialogue()
+    {
+        postMissionDialogue.SetActive(false);
     }
 }

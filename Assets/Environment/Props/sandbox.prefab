@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &8175865802811626891
 Transform:
@@ -43,6 +43,10 @@ PrefabInstance:
     - target: {fileID: 1103910828910122, guid: 0cd5ef7100741714a8a1802dbe06a2d5, type: 3}
       propertyPath: m_Name
       value: SM_Prop_SandBucket_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1103910828910122, guid: 0cd5ef7100741714a8a1802dbe06a2d5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4325020563174704, guid: 0cd5ef7100741714a8a1802dbe06a2d5, type: 3}
       propertyPath: m_RootOrder
@@ -105,6 +109,10 @@ PrefabInstance:
     - target: {fileID: 1722441687736080, guid: 51d4fc054730d19448ae8088d642069f, type: 3}
       propertyPath: m_Name
       value: SM_Prop_Sandpit_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1722441687736080, guid: 51d4fc054730d19448ae8088d642069f, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4870894411927472, guid: 51d4fc054730d19448ae8088d642069f, type: 3}
       propertyPath: m_RootOrder
